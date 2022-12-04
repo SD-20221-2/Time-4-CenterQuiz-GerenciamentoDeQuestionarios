@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>412</x>
+      <y>180</y>
+      <w>72</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>model
+--
+- Administrador.java
+- Grupo.java
+- Questao.java
+- BancoDeQuestoes.java
+- Questionario.java
+- UsuarioComum.java
+- Usuario.java
+bg=black
+fg=white
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>588</x>
+      <y>160</y>
+      <w>64</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>controller
+--
+- IndexController.java
+bg=black
+fg=white
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>488</x>
+      <y>180</y>
+      <w>76</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>repository
+--
+- CenterQuizApplication.java
+bg=black
+fg=white
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>580</x>
+      <y>140</y>
+      <w>252</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>test
+--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- CenterQuizApplicationTest.java
+bg=#606163
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>332</x>
+      <y>164</y>
+      <w>236</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>java.sd.api.rest
+--
+
+bg=#404143
+fg=white
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>240</x>
+      <y>124</y>
+      <w>604</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>src
+--
+
+bg=#808183
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>244</x>
+      <y>140</y>
+      <w>328</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>main
+--
+bg=#606163
+fg=white
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>248</x>
+      <y>164</y>
+      <w>76</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>resources
+--
+
+
+
+
+
+
+
+
+
+
+application.properties
+(Propriedades do projeto)
+bg=#404143
+fg=white
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>256</x>
+      <y>180</y>
+      <w>64</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>static
+--
+bg=black
+fg=white
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>256</x>
+      <y>212</y>
+      <w>64</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>templates
+--
+
+bg=black
+fg=white
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>660</x>
+      <y>160</y>
+      <w>72</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>model
+--
+- Administrador.java
+- Grupo.java
+- Questao.java
+- BancoDeQuestoes.java
+- Questionario.java
+- UsuarioComum.java
+- Usuario.java
+bg=black
+fg=white
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>340</x>
+      <y>180</y>
+      <w>64</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>controller
+--
+- IndexController.java
+bg=black
+fg=white
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>748</x>
+      <y>160</y>
+      <w>76</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>repository
+--
+- CenterQuizApplication.java
+bg=black
+fg=white
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>220</x>
+      <y>108</y>
+      <w>628</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>CENTERQUIZ
+--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+.
+.
+pom.xml (Gerenciador de dependências Maven)
+
+bg=#808183
+fg=black
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
