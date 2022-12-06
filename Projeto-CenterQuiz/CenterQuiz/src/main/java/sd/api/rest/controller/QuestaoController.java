@@ -17,7 +17,7 @@ import java.util.Optional;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
-@RequestMapping(value = "/api/questao")
+@RequestMapping(value = "api/adm/questao")
 public class QuestaoController {
 
     @Autowired // se fosse CDI seria @Inject
