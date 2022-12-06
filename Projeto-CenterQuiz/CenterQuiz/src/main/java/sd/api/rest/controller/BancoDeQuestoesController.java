@@ -18,7 +18,7 @@ import sd.api.rest.repository.BancoDeQuestoesRepository;
 import sd.api.rest.repository.QuestionarioRepository;
 
 @RestController
-@RequestMapping(value = "/api/banco-de-questoes")
+@RequestMapping(value = "api/adm/banco-de-questoes")
 public class BancoDeQuestoesController {
 
     @Autowired // se fosse CDI seria @Inject
