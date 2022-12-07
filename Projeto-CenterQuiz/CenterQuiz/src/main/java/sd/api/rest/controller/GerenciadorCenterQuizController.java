@@ -2,6 +2,7 @@ package sd.api.rest.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
@@ -379,6 +380,47 @@ public class GerenciadorCenterQuizController {
 
         return new ResponseEntity<BancoDeQuestoes>(
                 bancoDeQuestoesFinal, HttpStatus.OK
+        );
+    }
+
+    @PostMapping(
+            value = "/usuario-comum/responder-questionario", produces = "application/json"
+    )
+    public ResponseEntity<JSONObject> responderQuestionario(
+            @RequestBody JSONObject respostaJsonObject
+    ) {
+        Long idQuestao = 0L;
+        if (respostaJsonObject.containsKey("idQuestao")) {
+            idQuestao = Long.parseLong(respostaJsonObject.getAsString("idQuestao"));
+        }
+
+        Optional<Questao> questao = questaoRepository.findById(idQuestao);
+
+        System.err.println(questao.get());
+
+        boolean respostaCorreta = false;
+        if (respostaJsonObject.containsKey("respostas")) {
+            List<Long> arrayRespostasVerificar = (ArrayList<Long>) respostaJsonObject.get("respostas");
+
+            for (int i = 0; i < questao.get().getRespostas().size(); i++) {
+                respostaCorreta = false;
+                for (int j = 0; j < arrayRespostasVerificar.size(); j++) {
+                    if (Objects.equals(questao.get().getRespostas().get(i), arrayRespostasVerificar.get(j))) {
+                        respostaCorreta = true;
+                    }
+                }
+                if (respostaCorreta == false) {
+                    break;
+                }
+            }
+
+        }
+        JSONObject retorno = new JSONObject();
+        retorno.put("sucesso", respostaCorreta);
+        retorno.put("feedback", (respostaCorreta ? "Parabéns, você acertou!" : "Resposta errada! Por favor, tente novamente."));
+
+        return new ResponseEntity<JSONObject>(
+                retorno, HttpStatus.OK
         );
     }
 }
