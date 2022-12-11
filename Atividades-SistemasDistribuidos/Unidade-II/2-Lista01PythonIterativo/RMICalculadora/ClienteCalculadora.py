@@ -6,6 +6,6 @@ class ExpressionParser(object):
     n2 = input("n2: ")
 
 
-    obj = Pyro4.core.Proxy('PYRO:Calculator@' + 'localhost' + ':8000')
+    obj = Pyro4.core.Proxy('PYRO:Servidor01RMI@' + 'localhost' + ':8000')
 
     print(obj.add(float(n1), float(n2)))
