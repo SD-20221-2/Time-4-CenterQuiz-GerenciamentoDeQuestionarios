@@ -4,144 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd75ec1f-5475-4812-85c6-133ec55278dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/nbactions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/src/main/java/ex1/rmi/Cliente01RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/src/main/java/ex1/rmi/Servidor01RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/src/main/java/ex1/rpc/Cliente01RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/src/main/java/ex1/rpc/Servidor01RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/src/main/java/ex1/sockets/Cliente01Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/src/main/java/ex1/sockets/Servidor01Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/src/main/java/home01/Salario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/src/main/java/home01/SalarioInterfaceRMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/Ex1-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/classes/ex1/rmi/Cliente01RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/classes/ex1/rmi/Servidor01RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/classes/ex1/rpc/Cliente01RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/classes/ex1/rpc/Servidor01RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/classes/ex1/sockets/Cliente01Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/classes/ex1/sockets/Servidor01Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/classes/home01/Salario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/classes/home01/SalarioInterfaceRMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex1/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/src/main/java/ex2/rmi/Cliente02RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/src/main/java/ex2/rmi/Servidor02RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/src/main/java/ex2/rpc/Cliente02RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/src/main/java/ex2/rpc/Servidor02RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/src/main/java/ex2/sockets/Cliente02Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/src/main/java/ex2/sockets/Servidor02Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/src/main/java/home02/Maioridade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/src/main/java/home02/MaioridadeInterfaceRMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/target/classes/ex2/rmi/Cliente02RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/target/classes/ex2/rmi/Servidor02RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/target/classes/ex2/rpc/Cliente02RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/target/classes/ex2/rpc/Servidor02RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/target/classes/ex2/sockets/Cliente02Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/target/classes/ex2/sockets/Servidor02Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/target/classes/home02/Maioridade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex2/target/classes/home02/MaioridadeInterfaceRMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/src/main/java/ex3/rmi/Cliente03RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/src/main/java/ex3/rmi/Servidor03RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/src/main/java/ex3/rpc/Cliente03RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/src/main/java/ex3/rpc/Servidor03RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/src/main/java/ex3/socket/Cliente03Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/src/main/java/ex3/socket/Servidor03Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/src/main/java/home03/Nota.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/src/main/java/home03/NotasInterfaceRMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/target/classes/Home03/Nota.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/target/classes/Home03/NotasInterfaceRMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/target/classes/ex3/rmi/Cliente03RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/target/classes/ex3/rmi/Servidor03RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/target/classes/ex3/rpc/Cliente03RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/target/classes/ex3/rpc/Servidor03RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/target/classes/ex3/socket/Cliente03Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex3/target/classes/ex3/socket/Servidor03Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/src/main/java/ex4/rmi/Cliente04RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/src/main/java/ex4/rmi/Servidor04RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/src/main/java/ex4/rpc/Cliente04RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/src/main/java/ex4/rpc/Servidor04RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/src/main/java/ex4/sockets/Cliente04Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/src/main/java/ex4/sockets/Servidor04Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/src/main/java/home04/PesoIdeal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/src/main/java/home04/PesoIdealInterfaceRMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/target/classes/ex4/rmi/Cliente04RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/target/classes/ex4/rmi/Servidor04RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/target/classes/ex4/rpc/Cliente04RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/target/classes/ex4/rpc/Servidor04RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/target/classes/ex4/sockets/Cliente04Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/target/classes/ex4/sockets/Servidor04Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/target/classes/home04/PesoIdeal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex4/target/classes/home04/PesoIdealInterfaceRMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/src/main/java/ex5/rmi/Cliente05RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/src/main/java/ex5/rmi/Servidor05RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/src/main/java/ex5/rpc/Cliente05RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/src/main/java/ex5/rpc/Servidor05RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/src/main/java/ex5/sockets/Cliente05Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/src/main/java/ex5/sockets/Servidor05Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/src/main/java/home05/CategoriaNadador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/src/main/java/home05/CategoriaNadadorInterfaceRMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/target/classes/ex5/rmi/Cliente05RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/target/classes/ex5/rmi/Servidor05RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/target/classes/ex5/rpc/Cliente05RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/target/classes/ex5/rpc/Servidor05RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/target/classes/ex5/sockets/Cliente05Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/target/classes/ex5/sockets/Servidor05Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/target/classes/home05/CategoriaNadador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex5/target/classes/home05/CategoriaNadadorInterfaceRMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/src/main/java/ex6/rmi/Cliente06RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/src/main/java/ex6/rmi/Servidor06RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/src/main/java/ex6/rpc/Cliente06RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/src/main/java/ex6/rpc/Servidor06RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/src/main/java/ex6/sockets/Cliente06Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/src/main/java/ex6/sockets/Servidor06Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/src/main/java/home06/Salario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/src/main/java/home06/SalarioInterfaceRMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/target/classes/ex6/rmi/Cliente06RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/target/classes/ex6/rmi/Servidor06RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/target/classes/ex6/rpc/Cliente06RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/target/classes/ex6/rpc/Servidor06RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/target/classes/ex6/sockets/Cliente06Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/target/classes/ex6/sockets/Servidor06Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/target/classes/home06/Salario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex6/target/classes/home06/SalarioInterfaceRMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/src/main/java/ex7/rmi/Cliente07RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/src/main/java/ex7/rmi/Servidor07RMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/src/main/java/ex7/rpc/Cliente07RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/src/main/java/ex7/rpc/Servidor07RPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/src/main/java/ex7/sockets/Cliente07Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/src/main/java/ex7/sockets/Servidor07Sockets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/src/main/java/home07/Aposentadoria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/src/main/java/home07/AposentadoriaInterfaceRMI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/target/classes/ex7/rmi/Cliente07RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/target/classes/ex7/rmi/Servidor07RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/target/classes/ex7/rpc/Cliente07RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/target/classes/ex7/rpc/Servidor07RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/target/classes/ex7/sockets/Cliente07Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/target/classes/ex7/sockets/Servidor07Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/target/classes/home07/Aposentadoria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex7/target/classes/home07/AposentadoriaInterfaceRMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex8/target/Ex8-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex8/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/ex9/rmi/Cliente09RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/ex9/rmi/Servidor09RMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/ex9/rpc/Cliente02RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/ex9/rpc/Servidor02RPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/ex9/sockets/Cliente09Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/ex9/sockets/Servidor09Sockets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/home09/Baralho.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/home09/BaralhoInterfaceRMI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/home09/NaipeCarta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/Ex9/target/classes/home09/ValorCarta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3-ProblemasDeProgramacao/problemas de programacao-1.pdf" beforeDir="false" />
-    </list>
+    <list default="true" id="bd75ec1f-5475-4812-85c6-133ec55278dd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,6 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/mathe/Desktop/GitHub/Time-4-CenterQuiz-GerenciamentoDeQuestionarios/Atividades-SistemasDistribuidos/Unidade-II/2-Lista01PythonIterativo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -183,17 +47,18 @@
       <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\Unidade-II\2-ProblemasDeProgramacao-Python\Ex1\sockets" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ClienteCalculadora">
+  <component name="RunManager" selected="Python.Cliente01Sockets">
     <configuration name="Cliente01Sockets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="2-ProblemasDeProgramacao-Python" />
+      <module name="2-Lista01PythonIterativo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\Unidade-II\2-Lista01PythonIterativo\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.9 (2-Lista01PythonIterativo)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ex1/sockets" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -229,15 +94,16 @@
       <method v="2" />
     </configuration>
     <configuration name="Servidor01Sockets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="2-ProblemasDeProgramacao-Python" />
+      <module name="2-Lista01PythonIterativo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\Unidade-II\2-Lista01PythonIterativo\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.9 (2-Lista01PythonIterativo)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ex1/sockets" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -296,10 +162,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ClienteCalculadora" />
-        <item itemvalue="Python.ServidorCalculadora" />
         <item itemvalue="Python.Cliente01Sockets" />
         <item itemvalue="Python.Servidor01Sockets" />
+        <item itemvalue="Python.ClienteCalculadora" />
+        <item itemvalue="Python.ServidorCalculadora" />
       </list>
     </recent_temporary>
   </component>
@@ -312,6 +178,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670458173758</updated>
       <workItem from="1670458909143" duration="8727000" />
+      <workItem from="1670699345750" duration="1046000" />
     </task>
     <servers />
   </component>
@@ -330,6 +197,8 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor01Sockets.coverage" NAME="Servidor01Sockets Coverage Results" MODIFIED="1670700142159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/sockets" />
+    <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente01Sockets.coverage" NAME="Cliente01Sockets Coverage Results" MODIFIED="1670700152055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/sockets" />
     <SUITE FILE_PATH="coverage/2_ProblemasDeProgramacao_Python$ServidorCalculadora.coverage" NAME="ServidorCalculadora Coverage Results" MODIFIED="1670468178254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RMICalculadora" />
     <SUITE FILE_PATH="coverage/2_ProblemasDeProgramacao_Python$Servidor01Sockets.coverage" NAME="Servidor01Sockets Coverage Results" MODIFIED="1670465693026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/sockets" />
     <SUITE FILE_PATH="coverage/2_ProblemasDeProgramacao_Python$main.coverage" NAME="main Coverage Results" MODIFIED="1670459498674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
