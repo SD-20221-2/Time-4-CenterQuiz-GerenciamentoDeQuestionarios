@@ -9,7 +9,7 @@ class Servidor01Sockets:
     try:
 
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.bind(("localhost", 8080))
+        s.bind(("localhost", 7777))
         s.listen()
         print("Servidor esperando por conexoes...")
         conn, addr = s.accept()

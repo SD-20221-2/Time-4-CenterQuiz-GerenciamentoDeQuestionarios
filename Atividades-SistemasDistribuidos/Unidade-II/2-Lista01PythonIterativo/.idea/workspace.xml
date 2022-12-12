@@ -54,7 +54,29 @@
       <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\Unidade-II\2-ProblemasDeProgramacao-Python\Ex1\sockets" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Cliente06RPC">
+  <component name="RunManager" selected="Python.Servidor01Sockets">
+    <configuration name="Cliente01Sockets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="2-Lista01PythonIterativo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ex1/sockets" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex1/sockets/Cliente01Sockets.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Cliente06RMI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="2-Lista01PythonIterativo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -99,7 +121,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Cliente06Sockets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Servidor01Sockets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="2-Lista01PythonIterativo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -107,34 +129,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ex6/sockets" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ex1/sockets" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex6/sockets/Cliente06Sockets.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Servidor06RMI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="2-Lista01PythonIterativo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ex6/rmi" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex6/rmi/Servidor06RMI.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex1/sockets/Servidor01Sockets.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Servidor01Sockets" />
+        <item itemvalue="Python.Cliente01Sockets" />
         <item itemvalue="Python.Cliente06RPC" />
         <item itemvalue="Python.Servidor06RPC" />
         <item itemvalue="Python.Cliente06RMI" />
-        <item itemvalue="Python.Servidor06RMI" />
-        <item itemvalue="Python.Cliente06Sockets" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +207,7 @@
       <updated>1670458173758</updated>
       <workItem from="1670458909143" duration="8727000" />
       <workItem from="1670699345750" duration="1046000" />
-      <workItem from="1670787235024" duration="15979000" />
+      <workItem from="1670787235024" duration="16765000" />
     </task>
     <servers />
   </component>
@@ -264,9 +264,10 @@
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor05Sockets.coverage" NAME="Servidor05Sockets Coverage Results" MODIFIED="1670799558640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex5/sockets" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor02Sockets.coverage" NAME="Servidor02Sockets Coverage Results" MODIFIED="1670792880200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex2/sockets" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente05RPC.coverage" NAME="Cliente05RPC Coverage Results" MODIFIED="1670804726976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex5/rpc" />
+    <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente06RPC.coverage" NAME="Cliente06RPC Coverage Results" MODIFIED="1670806805974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex6/rpc" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente03RPC.coverage" NAME="Cliente03RPC Coverage Results" MODIFIED="1670796024236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex3/rpc" />
-    <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente01Sockets.coverage" NAME="Cliente01Sockets Coverage Results" MODIFIED="1670792857997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/sockets" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor03RPC.coverage" NAME="Servidor03RPC Coverage Results" MODIFIED="1670796005314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex3/rpc" />
+    <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente01Sockets.coverage" NAME="Cliente01Sockets Coverage Results" MODIFIED="1670807118009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/sockets" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente04Sockets.coverage" NAME="Cliente04Sockets Coverage Results" MODIFIED="1670798477543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex4/sockets" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor04RMI__1_.coverage" NAME="Servidor04RMI (1) Coverage Results" MODIFIED="1670798731663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex4/rmi" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor02RPC.coverage" NAME="Servidor02RPC Coverage Results" MODIFIED="1670794520374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex2/rpc" />
@@ -276,7 +277,7 @@
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente04RPC.coverage" NAME="Cliente04RPC Coverage Results" MODIFIED="1670798894130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex4/rpc" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor01RPC.coverage" NAME="Servidor01RPC Coverage Results" MODIFIED="1670789684080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/rpc" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente04RMI.coverage" NAME="Cliente04RMI Coverage Results" MODIFIED="1670798733463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex4/rmi" />
-    <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor01Sockets.coverage" NAME="Servidor01Sockets Coverage Results" MODIFIED="1670792838186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/sockets" />
+    <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor01Sockets.coverage" NAME="Servidor01Sockets Coverage Results" MODIFIED="1670807234413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/sockets" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor04Sockets.coverage" NAME="Servidor04Sockets Coverage Results" MODIFIED="1670798475760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex4/sockets" />
     <SUITE FILE_PATH="coverage/2_ProblemasDeProgramacao_Python$ServidorCalculadora.coverage" NAME="ServidorCalculadora Coverage Results" MODIFIED="1670468178254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RMICalculadora" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente01RPC.coverage" NAME="Cliente01RPC Coverage Results" MODIFIED="1670789705471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/rpc" />
@@ -286,6 +287,7 @@
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Cliente02Sockets.coverage" NAME="Cliente02Sockets Coverage Results" MODIFIED="1670792870134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex2/sockets" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor05RPC.coverage" NAME="Servidor05RPC Coverage Results" MODIFIED="1670804724161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex5/rpc" />
     <SUITE FILE_PATH="coverage/2_ProblemasDeProgramacao_Python$Cliente01Sockets.coverage" NAME="Cliente01Sockets Coverage Results" MODIFIED="1670465696580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex1/sockets" />
+    <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor06RPC.coverage" NAME="Servidor06RPC Coverage Results" MODIFIED="1670806803967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex6/rpc" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor03Sockets.coverage" NAME="Servidor03Sockets Coverage Results" MODIFIED="1670795318719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex3/sockets" />
     <SUITE FILE_PATH="coverage/2_Lista01PythonIterativo$Servidor06Sockets.coverage" NAME="Servidor06Sockets Coverage Results" MODIFIED="1670806097383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ex6/sockets" />
     <SUITE FILE_PATH="coverage/2_ProblemasDeProgramacao_Python$ClienteCalculadora.coverage" NAME="ClienteCalculadora Coverage Results" MODIFIED="1670468181052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RMICalculadora" />

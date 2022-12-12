@@ -5,7 +5,7 @@ import traceback
 class Cliente01Sockets:
     try:
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server.connect(("localhost", 8080))
+        server.connect(("localhost", 7777))
 
         nome = input("Digite o nome: ")
         cargo = input("Digite o cargo: ")
