@@ -7,6 +7,8 @@ import java.util.Optional;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,15 +46,17 @@ public class GerenciadorCenterQuizController {
             value = "/adm/registro-questionario/todos",
             produces = "application/json"
     )
-    public ResponseEntity<List<RegistroQuestionario>>
-            obterTodosRegistrosQuestionarioAdm() {
+    public ResponseEntity<?>
+            obterTodosRegistrosQuestionarioAdm(Pageable pageable) {
+        JSONObject jsonObjectPaginacaoRegistroQuestionarios = new JSONObject();
+
         List<RegistroQuestionario> listaRegistroQuestionarios
                 = new ArrayList<>();
 
-        List<BancoDeQuestoes> listaBancoDeQuestoes
-                = (List<BancoDeQuestoes>) bancoDeQuestoesRepository.findAll();
+        Page<BancoDeQuestoes> paginacaoBancoDeQuestoes
+                = bancoDeQuestoesRepository.findAll(pageable);
 
-        for (BancoDeQuestoes bancoDeQuestoes : listaBancoDeQuestoes) {
+        for (BancoDeQuestoes bancoDeQuestoes : paginacaoBancoDeQuestoes.getContent()) {
             if (bancoDeQuestoes.getIdQuestionario() != null) {
                 RegistroQuestionario registroQuestionario
                         = new RegistroQuestionario();
@@ -78,8 +82,53 @@ public class GerenciadorCenterQuizController {
             }
         }
 
-        return new ResponseEntity<List<RegistroQuestionario>>(
-                listaRegistroQuestionarios, HttpStatus.OK
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "content",
+                listaRegistroQuestionarios
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "pageable",
+                paginacaoBancoDeQuestoes.getPageable()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "totalPages",
+                paginacaoBancoDeQuestoes.getTotalPages()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "totalElements",
+                paginacaoBancoDeQuestoes.getTotalElements()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "last",
+                paginacaoBancoDeQuestoes.isLast()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "size",
+                paginacaoBancoDeQuestoes.getSize()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "number",
+                paginacaoBancoDeQuestoes.getNumber()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "sort",
+                paginacaoBancoDeQuestoes.getSort()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "numberOfElements",
+                paginacaoBancoDeQuestoes.getNumberOfElements()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "first",
+                paginacaoBancoDeQuestoes.isFirst()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "empty",
+                paginacaoBancoDeQuestoes.isEmpty()
+        );
+
+        return new ResponseEntity<>(
+                jsonObjectPaginacaoRegistroQuestionarios, HttpStatus.OK
         );
     }
 
@@ -133,23 +182,25 @@ public class GerenciadorCenterQuizController {
      * Obter todos os bancos de questões, com questionário e questões sem
      * respostas
      *
+     * @param pageable
      * @return
      */
     @GetMapping(
             value = "/usuario-comum/registro-questionario/todos",
             produces = "application/json"
     )
-    public ResponseEntity<JSONArray>
-            obterTodosRegistrosQuestionarioUsuarioComum() {
+    public ResponseEntity<?>
+            obterTodosRegistrosQuestionarioUsuarioComum(Pageable pageable) {
+        JSONObject jsonObjectPaginacaoRegistroQuestionarios = new JSONObject();
 
         List<RegistroQuestionario> listaRegistroQuestionarios
                 = new ArrayList<>();
 
-        List<BancoDeQuestoes> listaBancoDeQuestoes
-                = (List<BancoDeQuestoes>) bancoDeQuestoesRepository.findAll();
+        Page<BancoDeQuestoes> paginacaoBancoDeQuestoes
+                = bancoDeQuestoesRepository.findAll(pageable);
 
         JSONArray jsonArrayRegistrosQuestionario = new JSONArray();
-        for (BancoDeQuestoes bancoDeQuestoes : listaBancoDeQuestoes) {
+        for (BancoDeQuestoes bancoDeQuestoes : paginacaoBancoDeQuestoes.getContent()) {
             JSONObject jsonObjectRegistroQuestionario = new JSONObject();
             if (bancoDeQuestoes.getIdQuestionario() != null) {
                 RegistroQuestionario registroQuestionario
@@ -224,8 +275,53 @@ public class GerenciadorCenterQuizController {
             }
         }
 
-        return new ResponseEntity<JSONArray>(
-                jsonArrayRegistrosQuestionario, HttpStatus.OK
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "content",
+                jsonArrayRegistrosQuestionario
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "pageable",
+                paginacaoBancoDeQuestoes.getPageable()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "totalPages",
+                paginacaoBancoDeQuestoes.getTotalPages()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "totalElements",
+                paginacaoBancoDeQuestoes.getTotalElements()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "last",
+                paginacaoBancoDeQuestoes.isLast()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "size",
+                paginacaoBancoDeQuestoes.getSize()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "number",
+                paginacaoBancoDeQuestoes.getNumber()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "sort",
+                paginacaoBancoDeQuestoes.getSort()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "numberOfElements",
+                paginacaoBancoDeQuestoes.getNumberOfElements()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "first",
+                paginacaoBancoDeQuestoes.isFirst()
+        );
+        jsonObjectPaginacaoRegistroQuestionarios.put(
+                "empty",
+                paginacaoBancoDeQuestoes.isEmpty()
+        );
+
+        return new ResponseEntity<>(
+                jsonObjectPaginacaoRegistroQuestionarios, HttpStatus.OK
         );
     }
 
