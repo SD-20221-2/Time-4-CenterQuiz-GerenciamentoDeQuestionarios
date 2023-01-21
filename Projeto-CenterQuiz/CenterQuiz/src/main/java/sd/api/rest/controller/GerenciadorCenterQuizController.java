@@ -1,6 +1,8 @@
 package sd.api.rest.controller;
 
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,10 +20,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sd.api.rest.model.BancoDeQuestoes;
+import sd.api.rest.model.ConclusaoQuestao;
 import sd.api.rest.model.Questao;
 import sd.api.rest.model.Questionario;
 import sd.api.rest.model.RegistroQuestionario;
 import sd.api.rest.repository.BancoDeQuestoesRepository;
+import sd.api.rest.repository.ConclusaoQuestaoRepository;
 import sd.api.rest.repository.QuestaoRepository;
 import sd.api.rest.repository.QuestionarioRepository;
 
@@ -41,6 +45,9 @@ public class GerenciadorCenterQuizController {
 
     @Autowired // se fosse CDI seria @Inject
     private BancoDeQuestoesRepository bancoDeQuestoesRepository;
+    
+    @Autowired // se fosse CDI seria @Inject
+    private ConclusaoQuestaoRepository conclusaoQuestaoRepository;
 
     @GetMapping(
             value = "/adm/registro-questionario/todos",
@@ -513,7 +520,22 @@ public class GerenciadorCenterQuizController {
         }
         JSONObject retorno = new JSONObject();
         retorno.put("sucesso", respostaCorreta);
-        retorno.put("feedback", (respostaCorreta ? "Parabéns, você acertou!" : "Resposta errada! Por favor, tente novamente."));
+        retorno.put("feedback",
+                (respostaCorreta
+                        ? "Parabéns, você acertou!"
+                        : "Resposta errada! Por favor, tente novamente.")
+        );
+        
+        
+        ConclusaoQuestao conclusaoQuestao = new ConclusaoQuestao();
+        conclusaoQuestao.setIdQuestao(idQuestao);
+        conclusaoQuestao.setIdUsuario(0L); // IMPUTAR O ID DO USUÁRIO LOGADO
+        //conclusaoQuestao.setDataConclusao(Date.from(Instant.MIN));
+        
+        if (respostaCorreta) {
+            
+            conclusaoQuestaoRepository.save(conclusaoQuestao);
+        }
 
         return new ResponseEntity<JSONObject>(
                 retorno, HttpStatus.OK
