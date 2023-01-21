@@ -516,8 +516,8 @@ public class GerenciadorCenterQuizController {
                     break;
                 }
             }
-
         }
+        
         JSONObject retorno = new JSONObject();
         retorno.put("sucesso", respostaCorreta);
         retorno.put("feedback",
