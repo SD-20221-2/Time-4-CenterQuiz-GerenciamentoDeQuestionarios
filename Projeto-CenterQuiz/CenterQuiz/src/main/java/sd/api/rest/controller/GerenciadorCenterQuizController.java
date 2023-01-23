@@ -45,7 +45,7 @@ public class GerenciadorCenterQuizController {
 
     @Autowired // se fosse CDI seria @Inject
     private BancoDeQuestoesRepository bancoDeQuestoesRepository;
-    
+
     @Autowired // se fosse CDI seria @Inject
     private ConclusaoQuestaoRepository conclusaoQuestaoRepository;
 
@@ -63,7 +63,8 @@ public class GerenciadorCenterQuizController {
         Page<BancoDeQuestoes> paginacaoBancoDeQuestoes
                 = bancoDeQuestoesRepository.findAll(pageable);
 
-        for (BancoDeQuestoes bancoDeQuestoes : paginacaoBancoDeQuestoes.getContent()) {
+        for (BancoDeQuestoes bancoDeQuestoes
+                : paginacaoBancoDeQuestoes.getContent()) {
             if (bancoDeQuestoes.getIdQuestionario() != null) {
                 RegistroQuestionario registroQuestionario
                         = new RegistroQuestionario();
@@ -225,25 +226,41 @@ public class GerenciadorCenterQuizController {
                         "nome", questionarioTemp.get().getNome()
                 );
                 jsonObjectQuestionario.put(
-                        "tipoQuestionario", questionarioTemp.get().isTipoQuestionario()
+                        "tipoQuestionario",
+                        questionarioTemp.get().isTipoQuestionario()
                 );
                 jsonObjectQuestionario.put(
-                        "dataInicio", questionarioTemp.get().getDataInicio()
+                        "dataInicio",
+                        questionarioTemp.get().getDataInicio()
                 );
                 jsonObjectQuestionario.put(
-                        "dataFim", questionarioTemp.get().getDataFim()
+                        "dataFim",
+                        questionarioTemp.get().getDataFim()
                 );
                 jsonObjectQuestionario.put(
-                        "duracao", questionarioTemp.get().getDuracao()
+                        "duracao",
+                        questionarioTemp.get().getDuracao()
                 );
 
-                jsonObjectRegistroQuestionario.put("questionario", jsonObjectQuestionario);
+                jsonObjectRegistroQuestionario.put(
+                        "questionario",
+                        jsonObjectQuestionario
+                );
 
                 JSONObject jsonObjectBancoDeQuestoes = new JSONObject();
 
-                jsonObjectBancoDeQuestoes.put("id", bancoDeQuestoes.getId());
-                jsonObjectBancoDeQuestoes.put("idQuestionario", bancoDeQuestoes.getIdQuestionario());
-                jsonObjectBancoDeQuestoes.put("idAdministrador", bancoDeQuestoes.getIdAdministrador());
+                jsonObjectBancoDeQuestoes.put(
+                        "id",
+                        bancoDeQuestoes.getId()
+                );
+                jsonObjectBancoDeQuestoes.put(
+                        "idQuestionario",
+                        bancoDeQuestoes.getIdQuestionario()
+                );
+                jsonObjectBancoDeQuestoes.put(
+                        "idAdministrador",
+                        bancoDeQuestoes.getIdAdministrador()
+                );
 
                 registroQuestionario.setQuestionario(
                         questionarioTemp.get()
@@ -261,17 +278,32 @@ public class GerenciadorCenterQuizController {
 
                 for (Questao questao : questoes) {
                     JSONObject jsonObjectQuestao = new JSONObject();
-                    jsonObjectQuestao.put("id", questao.getId());
-                    jsonObjectQuestao.put("titulo", questao.getTitulo());
+                    jsonObjectQuestao.put(
+                            "id", questao.getId()
+                    );
+                    jsonObjectQuestao.put(
+                            "titulo", questao.getTitulo()
+                    );
                     jsonObjectQuestao.put("texto", questao.getTexto());
                     jsonObjectQuestao.put("opcoes", questao.getOpcoes());
-                    jsonObjectQuestao.put("vezesPerguntado", questao.getVezesPerguntado());
-                    jsonObjectQuestao.put("idBancoDeQuestoes", questao.getIdBancoDeQuestoes());
+                    jsonObjectQuestao.put(
+                            "vezesPerguntado",
+                            questao.getVezesPerguntado()
+                    );
+                    jsonObjectQuestao.put(
+                            "idBancoDeQuestoes",
+                            questao.getIdBancoDeQuestoes()
+                    );
                     questao.setRespostas(null);
                     jsonArrayQuestoes.add(jsonObjectQuestao);
                 }
-                jsonObjectBancoDeQuestoes.put("questoes", jsonArrayQuestoes);
-                jsonObjectRegistroQuestionario.put("bancoDeQuestoes", jsonObjectBancoDeQuestoes);
+                jsonObjectBancoDeQuestoes.put(
+                        "questoes", jsonArrayQuestoes
+                );
+                jsonObjectRegistroQuestionario.put(
+                        "bancoDeQuestoes",
+                        jsonObjectBancoDeQuestoes
+                );
 
                 bancoDeQuestoes.setQuestoes(questoes);
 
@@ -328,7 +360,8 @@ public class GerenciadorCenterQuizController {
         );
 
         return new ResponseEntity<>(
-                jsonObjectPaginacaoRegistroQuestionarios, HttpStatus.OK
+                jsonObjectPaginacaoRegistroQuestionarios,
+                HttpStatus.OK
         );
     }
 
@@ -364,7 +397,8 @@ public class GerenciadorCenterQuizController {
                     "nome", questionarioTemp.get().getNome()
             );
             jsonObjectQuestionario.put(
-                    "tipoQuestionario", questionarioTemp.get().isTipoQuestionario()
+                    "tipoQuestionario",
+                    questionarioTemp.get().isTipoQuestionario()
             );
             jsonObjectQuestionario.put(
                     "dataInicio", questionarioTemp.get().getDataInicio()
@@ -376,13 +410,21 @@ public class GerenciadorCenterQuizController {
                     "duracao", questionarioTemp.get().getDuracao()
             );
 
-            jsonObjectRegistroQuestionario.put("questionario", jsonObjectQuestionario);
+            jsonObjectRegistroQuestionario.put(
+                    "questionario", jsonObjectQuestionario
+            );
 
             JSONObject jsonObjectBancoDeQuestoes = new JSONObject();
 
             jsonObjectBancoDeQuestoes.put("id", bancoDeQuestoes.getId());
-            jsonObjectBancoDeQuestoes.put("idQuestionario", bancoDeQuestoes.getIdQuestionario());
-            jsonObjectBancoDeQuestoes.put("idAdministrador", bancoDeQuestoes.getIdAdministrador());
+            jsonObjectBancoDeQuestoes.put(
+                    "idQuestionario",
+                    bancoDeQuestoes.getIdQuestionario()
+            );
+            jsonObjectBancoDeQuestoes.put(
+                    "idAdministrador",
+                    bancoDeQuestoes.getIdAdministrador()
+            );
 
             registroQuestionario.setQuestionario(
                     questionarioTemp.get()
@@ -404,13 +446,23 @@ public class GerenciadorCenterQuizController {
                 jsonObjectQuestao.put("titulo", questao.getTitulo());
                 jsonObjectQuestao.put("texto", questao.getTexto());
                 jsonObjectQuestao.put("opcoes", questao.getOpcoes());
-                jsonObjectQuestao.put("vezesPerguntado", questao.getVezesPerguntado());
-                jsonObjectQuestao.put("idBancoDeQuestoes", questao.getIdBancoDeQuestoes());
+                jsonObjectQuestao.put(
+                        "vezesPerguntado",
+                        questao.getVezesPerguntado()
+                );
+                jsonObjectQuestao.put(
+                        "idBancoDeQuestoes",
+                        questao.getIdBancoDeQuestoes()
+                );
                 questao.setRespostas(null);
                 jsonArrayQuestoes.add(jsonObjectQuestao);
             }
-            jsonObjectBancoDeQuestoes.put("questoes", jsonArrayQuestoes);
-            jsonObjectRegistroQuestionario.put("bancoDeQuestoes", jsonObjectBancoDeQuestoes);
+            jsonObjectBancoDeQuestoes.put(
+                    "questoes", jsonArrayQuestoes
+            );
+            jsonObjectRegistroQuestionario.put(
+                    "bancoDeQuestoes", jsonObjectBancoDeQuestoes
+            );
 
             bancoDeQuestoes.setQuestoes(questoes);
 
@@ -487,7 +539,8 @@ public class GerenciadorCenterQuizController {
     }
 
     @PostMapping(
-            value = "/usuario-comum/responder-questionario", produces = "application/json"
+            value = "/usuario-comum/responder-questionario",
+            produces = "application/json"
     )
     public ResponseEntity<JSONObject> responderQuestionario(
             @RequestBody JSONObject respostaJsonObject
@@ -503,12 +556,14 @@ public class GerenciadorCenterQuizController {
 
         boolean respostaCorreta = false;
         if (respostaJsonObject.containsKey("respostas")) {
-            List<Long> arrayRespostasVerificar = (ArrayList<Long>) respostaJsonObject.get("respostas");
+            List<Long> arrayRespostasVerificar
+                    = (ArrayList<Long>) respostaJsonObject.get("respostas");
 
             for (int i = 0; i < questao.get().getRespostas().size(); i++) {
                 respostaCorreta = false;
                 for (int j = 0; j < arrayRespostasVerificar.size(); j++) {
-                    if (Objects.equals(questao.get().getRespostas().get(i), arrayRespostasVerificar.get(j))) {
+                    if (Objects.equals(questao.get().getRespostas().get(i),
+                            arrayRespostasVerificar.get(j))) {
                         respostaCorreta = true;
                     }
                 }
@@ -517,7 +572,7 @@ public class GerenciadorCenterQuizController {
                 }
             }
         }
-        
+
         JSONObject retorno = new JSONObject();
         retorno.put("sucesso", respostaCorreta);
         retorno.put("feedback",
@@ -525,15 +580,14 @@ public class GerenciadorCenterQuizController {
                         ? "Parabéns, você acertou!"
                         : "Resposta errada! Por favor, tente novamente.")
         );
-        
-        
+
         ConclusaoQuestao conclusaoQuestao = new ConclusaoQuestao();
         conclusaoQuestao.setIdQuestao(idQuestao);
         conclusaoQuestao.setIdUsuario(0L); // IMPUTAR O ID DO USUÁRIO LOGADO
         //conclusaoQuestao.setDataConclusao(Date.from(Instant.MIN));
-        
+
         if (respostaCorreta) {
-            
+
             conclusaoQuestaoRepository.save(conclusaoQuestao);
         }
 
