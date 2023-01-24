@@ -547,7 +547,9 @@ public class GerenciadorCenterQuizController {
     ) {
         Long idQuestao = 0L;
         if (respostaJsonObject.containsKey("idQuestao")) {
-            idQuestao = Long.parseLong(respostaJsonObject.getAsString("idQuestao"));
+            idQuestao = Long.parseLong(respostaJsonObject.getAsString(
+                    "idQuestao"
+            ));
         }
 
         Optional<Questao> questao = questaoRepository.findById(idQuestao);
@@ -562,8 +564,10 @@ public class GerenciadorCenterQuizController {
             for (int i = 0; i < questao.get().getRespostas().size(); i++) {
                 respostaCorreta = false;
                 for (int j = 0; j < arrayRespostasVerificar.size(); j++) {
-                    if (Objects.equals(questao.get().getRespostas().get(i),
-                            arrayRespostasVerificar.get(j))) {
+                    if (Objects.equals(
+                            questao.get().getRespostas().get(i),
+                            arrayRespostasVerificar.get(j)
+                    )) {
                         respostaCorreta = true;
                     }
                 }
@@ -590,7 +594,7 @@ public class GerenciadorCenterQuizController {
 
             conclusaoQuestaoRepository.save(conclusaoQuestao);
         }
-
+        
         return new ResponseEntity<JSONObject>(
                 retorno, HttpStatus.OK
         );
