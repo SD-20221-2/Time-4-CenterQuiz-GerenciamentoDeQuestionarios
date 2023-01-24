@@ -585,18 +585,73 @@ public class GerenciadorCenterQuizController {
                         : "Resposta errada! Por favor, tente novamente.")
         );
 
-        ConclusaoQuestao conclusaoQuestao = new ConclusaoQuestao();
-        conclusaoQuestao.setIdQuestao(idQuestao);
-        conclusaoQuestao.setIdUsuario(0L); // IMPUTAR O ID DO USUÁRIO LOGADO
-        //conclusaoQuestao.setDataConclusao(Date.from(Instant.MIN));
-
         if (respostaCorreta) {
+            ConclusaoQuestao conclusaoQuestao = new ConclusaoQuestao();
+            conclusaoQuestao.setIdQuestao(idQuestao);
+            conclusaoQuestao.setIdUsuario(0L); // IMPUTAR O ID DO USUÁRIO LOGADO
+            conclusaoQuestao.setIdQuestao(idQuestao);
+            System.out.println(new Date());
+            conclusaoQuestao.setDataConclusao(new Date());
 
             conclusaoQuestaoRepository.save(conclusaoQuestao);
         }
-        
+
         return new ResponseEntity<JSONObject>(
                 retorno, HttpStatus.OK
         );
+    }
+
+    @GetMapping(value = "/adm/conclusao/todos", produces = "application/json")
+    public ResponseEntity<?> obterConclusoes(Pageable pageable) {
+        Page<ConclusaoQuestao> paginacaoConclusoes = conclusaoQuestaoRepository.findAll(pageable);
+
+        JSONObject jsonRetorno = new JSONObject();
+        
+        jsonRetorno.put(
+                "content",
+                paginacaoConclusoes.getContent()
+        );
+        jsonRetorno.put(
+                "pageable",
+                paginacaoConclusoes.getPageable()
+        );
+        jsonRetorno.put(
+                "totalPages",
+                paginacaoConclusoes.getTotalPages()
+        );
+        jsonRetorno.put(
+                "totalElements",
+                paginacaoConclusoes.getTotalElements()
+        );
+        jsonRetorno.put(
+                "last",
+                paginacaoConclusoes.isLast()
+        );
+        jsonRetorno.put(
+                "size",
+                paginacaoConclusoes.getSize()
+        );
+        jsonRetorno.put(
+                "number",
+                paginacaoConclusoes.getNumber()
+        );
+        jsonRetorno.put(
+                "sort",
+                paginacaoConclusoes.getSort()
+        );
+        jsonRetorno.put(
+                "numberOfElements",
+                paginacaoConclusoes.getNumberOfElements()
+        );
+        jsonRetorno.put(
+                "first",
+                paginacaoConclusoes.isFirst()
+        );
+        jsonRetorno.put(
+                "empty",
+                paginacaoConclusoes.isEmpty()
+        );
+        
+        return new ResponseEntity<>(jsonRetorno, HttpStatus.OK);
     }
 }

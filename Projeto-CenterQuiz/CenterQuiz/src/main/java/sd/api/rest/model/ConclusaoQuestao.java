@@ -26,7 +26,7 @@ public class ConclusaoQuestao {
     public Long idUsuario;
     public Long idQuestao;
     
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     public Date dataConclusao;
 
     public Long getIdConclusaoQuestao() {
