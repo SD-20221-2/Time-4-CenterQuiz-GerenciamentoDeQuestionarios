@@ -33,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mathe/Desktop/GitHub/Time-4-CenterQuiz-GerenciamentoDeQuestionarios/Atividades-SistemasDistribuidos/ativ-17-01-2023-pub-sub-simples",
+    "last_opened_file_path": "C:/Users/mathe/Desktop/GitHub/Time-4-CenterQuiz-GerenciamentoDeQuestionarios/Atividades-SistemasDistribuidos/ativ-24-01-2023-mensageria-pub-sub-mqtt",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,16 +44,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\ativ-24-01-2023-mensageria-pub-sub-mqtt" />
       <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\atividade-24-01-2023\venv\ex5" />
       <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\atividade-24-01-2023\venv\ex4" />
       <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\atividade-24-01-2023" />
       <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\atividade-24-01-2023\venv\ex3" />
+      <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\atividade-24-01-2023\venv" />
     </key>
   </component>
   <component name="RunManager" selected="Python.publisher3">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="atividade-24-01-2023-mensageria-pub-sub-mqtt" />
+      <module name="ativ-24-01-2023-mensageria-pub-sub-mqtt" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -61,7 +61,7 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -75,19 +75,19 @@
       <method v="2" />
     </configuration>
     <configuration name="publisher3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="atividade-24-01-2023-mensageria-pub-sub-mqtt" />
+      <module name="ativ-24-01-2023-mensageria-pub-sub-mqtt" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ex3" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex3" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex3/publisher3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex3/publisher3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -97,19 +97,19 @@
       <method v="2" />
     </configuration>
     <configuration name="publisher4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="atividade-24-01-2023-mensageria-pub-sub-mqtt" />
+      <module name="ativ-24-01-2023-mensageria-pub-sub-mqtt" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv/ex4" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex4" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/ex4/publisher4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex4/publisher4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -119,19 +119,19 @@
       <method v="2" />
     </configuration>
     <configuration name="publisher5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="atividade-24-01-2023-mensageria-pub-sub-mqtt" />
+      <module name="ativ-24-01-2023-mensageria-pub-sub-mqtt" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv/ex5" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex5" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/ex5/publisher5.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex5/publisher5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,19 +141,19 @@
       <method v="2" />
     </configuration>
     <configuration name="subscriber3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="atividade-24-01-2023-mensageria-pub-sub-mqtt" />
+      <module name="ativ-24-01-2023-mensageria-pub-sub-mqtt" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ex3" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex3" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex3/subscriber3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex3/subscriber3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,19 +163,19 @@
       <method v="2" />
     </configuration>
     <configuration name="subscriber5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="atividade-24-01-2023-mensageria-pub-sub-mqtt" />
+      <module name="ativ-24-01-2023-mensageria-pub-sub-mqtt" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv/ex5" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex5" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/ex5/subscriber5.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex5/subscriber5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -188,8 +188,8 @@
       <list>
         <item itemvalue="Python.publisher3" />
         <item itemvalue="Python.subscriber3" />
-        <item itemvalue="Python.subscriber5" />
         <item itemvalue="Python.publisher5" />
+        <item itemvalue="Python.subscriber5" />
         <item itemvalue="Python.publisher4" />
       </list>
     </recent_temporary>
@@ -203,7 +203,9 @@
       <option name="presentableId" value="Default" />
       <updated>1674671382835</updated>
       <workItem from="1674671399019" duration="14626000" />
-      <workItem from="1674879219156" duration="120000" />
+      <workItem from="1674877473143" duration="984000" />
+      <workItem from="1674878548876" duration="351000" />
+      <workItem from="1674878932097" duration="282000" />
     </task>
     <servers />
   </component>
@@ -214,7 +216,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
+          <url>file://$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/main.py</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -223,16 +225,17 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/atividade_24_01_2023$publisher3__1_.coverage" NAME="publisher3 (1) Coverage Results" MODIFIED="1674876194683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex3" />
-    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$subscriber5.coverage" NAME="subscriber5 Coverage Results" MODIFIED="1674877157215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex5" />
     <SUITE FILE_PATH="coverage/atividade_24_01_2023$publisher__1_.coverage" NAME="publisher (1) Coverage Results" MODIFIED="1674852787878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex3" />
-    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$subscriber4.coverage" NAME="subscriber4 Coverage Results" MODIFIED="1674876601956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex4" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$subscriber4.coverage" NAME="subscriber4 Coverage Results" MODIFIED="1674878033672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex4" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023$subscriber3__1_.coverage" NAME="subscriber3 (1) Coverage Results" MODIFIED="1674876203380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex3" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher3.coverage" NAME="publisher3 Coverage Results" MODIFIED="1674878954563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex3" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$subscriber5.coverage" NAME="subscriber5 Coverage Results" MODIFIED="1674878078499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex5" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher3__1_.coverage" NAME="publisher3 (1) Coverage Results" MODIFIED="1674878020815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex3" />
     <SUITE FILE_PATH="coverage/atividade_24_01_2023$publisher.coverage" NAME="publisher Coverage Results" MODIFIED="1674844113808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/test" />
     <SUITE FILE_PATH="coverage/atividade_24_01_2023$subscriber.coverage" NAME="subscriber Coverage Results" MODIFIED="1674850625738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/test" />
-    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher4.coverage" NAME="publisher4 Coverage Results" MODIFIED="1674876606361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex4" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher4.coverage" NAME="publisher4 Coverage Results" MODIFIED="1674878042677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex4" />
     <SUITE FILE_PATH="coverage/atividade_24_01_2023$subscriber__1_.coverage" NAME="subscriber (1) Coverage Results" MODIFIED="1674852781539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex3" />
-    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$subscriber3.coverage" NAME="subscriber3 Coverage Results" MODIFIED="1674879315428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ex3" />
-    <SUITE FILE_PATH="coverage/atividade_24_01_2023$subscriber3__1_.coverage" NAME="subscriber3 (1) Coverage Results" MODIFIED="1674876203380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex3" />
-    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher5.coverage" NAME="publisher5 Coverage Results" MODIFIED="1674877153149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex5" />
-    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher3.coverage" NAME="publisher3 Coverage Results" MODIFIED="1674879319513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ex3" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$subscriber3.coverage" NAME="subscriber3 Coverage Results" MODIFIED="1674878950577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex3" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher5.coverage" NAME="publisher5 Coverage Results" MODIFIED="1674878087285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-24-01-2023-mensageria-pub-sub-mqtt/venv/ex5" />
   </component>
 </project>

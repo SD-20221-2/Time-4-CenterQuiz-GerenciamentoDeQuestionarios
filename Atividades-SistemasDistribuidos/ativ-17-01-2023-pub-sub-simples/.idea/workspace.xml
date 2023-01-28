@@ -33,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mathe/Desktop/GitHub/Time-4-CenterQuiz-GerenciamentoDeQuestionarios/Atividades-SistemasDistribuidos/atividade-17-01-2023-pub-sub-simples",
+    "last_opened_file_path": "C:/Users/mathe/Desktop/GitHub/Time-4-CenterQuiz-GerenciamentoDeQuestionarios/Atividades-SistemasDistribuidos/ativ-17-01-2023-pub-sub-simples",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -47,8 +47,11 @@
       <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\atividade-17-01-2023\venv" />
       <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\atividade-17-01-2023\venv\ex3" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\ativ-17-01-2023-pub-sub-simples" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.subscriber3 (1)">
+  <component name="RunManager" selected="Python.subscriber1 (1)">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="atividade-17-01-2023" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,12 +82,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/publisher.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/publisher.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -93,7 +96,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="publisher1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="publisher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="atividade-17-01-2023" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -101,12 +104,56 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/ex1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/ex1/publisher1.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\ativ-17-01-2023-pub-sub-simples\publisher.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="publisher1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="atividade-17-01-2023" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ex1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex1/publisher1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="subscriber1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="atividade-17-01-2023" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ex1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex1/subscriber1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,12 +170,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/ex1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv/ex1" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/ex1/subscriber1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/ex1/subscriber1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,28 +185,6 @@
       <method v="2" />
     </configuration>
     <configuration name="subscriber3 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="atividade-17-01-2023" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/ex3" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/ex3/subscriber3.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="subscriber3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="atividade-17-01-2023" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -183,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.subscriber1 (1)" />
+        <item itemvalue="Python.publisher (1)" />
+        <item itemvalue="Python.publisher1 (1)" />
         <item itemvalue="Python.subscriber3 (1)" />
         <item itemvalue="Python.subscriber1" />
-        <item itemvalue="Python.publisher (1)" />
-        <item itemvalue="Python.publisher1" />
-        <item itemvalue="Python.subscriber3" />
       </list>
     </recent_temporary>
   </component>
@@ -204,6 +229,7 @@
       <workItem from="1674597542374" duration="4759000" />
       <workItem from="1674671005785" duration="8418000" />
       <workItem from="1674878173166" duration="284000" />
+      <workItem from="1674879341911" duration="93000" />
     </task>
     <servers />
   </component>
@@ -214,7 +240,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/main.py</url>
+          <url>file://$PROJECT_DIR$/main.py</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -222,16 +248,19 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/atividade_17_01_2023$subscriber2.coverage" NAME="subscriber2 Coverage Results" MODIFIED="1673996478882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex2" />
-    <SUITE FILE_PATH="coverage/atividade_17_01_2023_pub_sub_simples$publisher__1_.coverage" NAME="publisher (1) Coverage Results" MODIFIED="1674878434547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv" />
-    <SUITE FILE_PATH="coverage/atividade_17_01_2023$publisher.coverage" NAME="publisher Coverage Results" MODIFIED="1674852509895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/ativ_17_01_2023_pub_sub_simples$subscriber1__1_.coverage" NAME="subscriber1 (1) Coverage Results" MODIFIED="1674879426705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ex1" />
     <SUITE FILE_PATH="coverage/atividade_17_01_2023$publisher1.coverage" NAME="publisher1 Coverage Results" MODIFIED="1673996459738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex1" />
-    <SUITE FILE_PATH="coverage/atividade_17_01_2023_pub_sub_simples$subscriber1.coverage" NAME="subscriber1 Coverage Results" MODIFIED="1674878440074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/ex1" />
+    <SUITE FILE_PATH="coverage/atividade_17_01_2023_pub_sub_simples$subscriber1.coverage" NAME="subscriber1 Coverage Results" MODIFIED="1674878440074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex1" />
     <SUITE FILE_PATH="coverage/atividade_17_01_2023$subscriber4.coverage" NAME="subscriber4 Coverage Results" MODIFIED="1673996659205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex4" />
-    <SUITE FILE_PATH="coverage/atividade_17_01_2023_pub_sub_simples$publisher1.coverage" NAME="publisher1 Coverage Results" MODIFIED="1674878412376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/ex1" />
-    <SUITE FILE_PATH="coverage/atividade_17_01_2023_pub_sub_simples$subscriber3__1_.coverage" NAME="subscriber3 (1) Coverage Results" MODIFIED="1674878451693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ativ-17-01-2023-pub-sub-simples/venv/ex3" />
-    <SUITE FILE_PATH="coverage/atividade_17_01_2023$subscriber1.coverage" NAME="subscriber1 Coverage Results" MODIFIED="1673996469169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex1" />
+    <SUITE FILE_PATH="coverage/atividade_17_01_2023_pub_sub_simples$publisher1.coverage" NAME="publisher1 Coverage Results" MODIFIED="1674878412376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex1" />
+    <SUITE FILE_PATH="coverage/ativ_17_01_2023_pub_sub_simples$publisher1__1_.coverage" NAME="publisher1 (1) Coverage Results" MODIFIED="1674879384217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ex1" />
+    <SUITE FILE_PATH="coverage/ativ_17_01_2023_pub_sub_simples$publisher__1_.coverage" NAME="publisher (1) Coverage Results" MODIFIED="1674879423611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/atividade_17_01_2023$subscriber3.coverage" NAME="subscriber3 Coverage Results" MODIFIED="1674852513951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex3" />
+    <SUITE FILE_PATH="coverage/atividade_17_01_2023$subscriber2.coverage" NAME="subscriber2 Coverage Results" MODIFIED="1673996478882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex2" />
+    <SUITE FILE_PATH="coverage/atividade_17_01_2023_pub_sub_simples$publisher__1_.coverage" NAME="publisher (1) Coverage Results" MODIFIED="1674878434547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/atividade_17_01_2023$publisher.coverage" NAME="publisher Coverage Results" MODIFIED="1674852509895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/atividade_17_01_2023_pub_sub_simples$subscriber3__1_.coverage" NAME="subscriber3 (1) Coverage Results" MODIFIED="1674878451693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex3" />
+    <SUITE FILE_PATH="coverage/atividade_17_01_2023$subscriber1.coverage" NAME="subscriber1 Coverage Results" MODIFIED="1673996469169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex1" />
     <SUITE FILE_PATH="coverage/atividade_17_01_2023$subscriber5.coverage" NAME="subscriber5 Coverage Results" MODIFIED="1673996501442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex5" />
   </component>
 </project>
