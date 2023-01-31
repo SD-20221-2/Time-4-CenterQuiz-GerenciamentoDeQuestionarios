@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+            $(document).ready (
+                function() {
+                    $.ajax({
+                        url: "localhost:8080/centerquiz/api/adm/registro-questionario/todos",
+                        method: "GET"
+                    }).then(
+                        function(data, status, info) {
+                            
+                        }
+                    );
+                }
+            );
+        </script>
+    </body>
+</html>

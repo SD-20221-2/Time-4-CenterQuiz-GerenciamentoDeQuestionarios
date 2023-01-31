@@ -33,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mathe/Desktop/GitHub/Time-4-CenterQuiz-GerenciamentoDeQuestionarios/Atividades-SistemasDistribuidos/ativ-17-01-2023-pub-sub-simples",
+    "last_opened_file_path": "C:/Users/mathe/Desktop/GitHub/Time-4-CenterQuiz-GerenciamentoDeQuestionarios/Atividades-SistemasDistribuidos/ativ-24-01-2023-mensageria-pub-sub-mqtt",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -230,6 +230,7 @@
       <workItem from="1674671005785" duration="8418000" />
       <workItem from="1674878173166" duration="284000" />
       <workItem from="1674879341911" duration="93000" />
+      <workItem from="1675146555516" duration="221000" />
     </task>
     <servers />
   </component>
