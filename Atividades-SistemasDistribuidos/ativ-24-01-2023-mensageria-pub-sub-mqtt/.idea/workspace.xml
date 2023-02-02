@@ -28,20 +28,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mathe/Desktop/GitHub/Time-4-CenterQuiz-GerenciamentoDeQuestionarios/Atividades-SistemasDistribuidos/ativ-24-01-2023-mensageria-pub-sub-mqtt",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathe/Desktop/GitHub/Time-4-CenterQuiz-GerenciamentoDeQuestionarios/Atividades-SistemasDistribuidos/ativ-24-01-2023-mensageria-pub-sub-mqtt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mathe\Desktop\GitHub\Time-4-CenterQuiz-GerenciamentoDeQuestionarios\Atividades-SistemasDistribuidos\ativ-24-01-2023-mensageria-pub-sub-mqtt" />
@@ -204,7 +204,9 @@
       <updated>1674671382835</updated>
       <workItem from="1674671399019" duration="14626000" />
       <workItem from="1674879219156" duration="120000" />
-      <workItem from="1675146574197" duration="797000" />
+      <workItem from="1675146574197" duration="1588000" />
+      <workItem from="1675201929375" duration="40000" />
+      <workItem from="1675202006872" duration="1226000" />
     </task>
     <servers />
   </component>
@@ -231,9 +233,9 @@
     <SUITE FILE_PATH="coverage/atividade_24_01_2023$subscriber.coverage" NAME="subscriber Coverage Results" MODIFIED="1674850625738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/test" />
     <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher4.coverage" NAME="publisher4 Coverage Results" MODIFIED="1674876606361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex4" />
     <SUITE FILE_PATH="coverage/atividade_24_01_2023$subscriber__1_.coverage" NAME="subscriber (1) Coverage Results" MODIFIED="1674852781539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex3" />
-    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$subscriber3.coverage" NAME="subscriber3 Coverage Results" MODIFIED="1674879315428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ex3" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$subscriber3.coverage" NAME="subscriber3 Coverage Results" MODIFIED="1675202020633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ex3" />
     <SUITE FILE_PATH="coverage/atividade_24_01_2023$subscriber3__1_.coverage" NAME="subscriber3 (1) Coverage Results" MODIFIED="1674876203380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex3" />
     <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher5.coverage" NAME="publisher5 Coverage Results" MODIFIED="1674877153149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/ex5" />
-    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher3.coverage" NAME="publisher3 Coverage Results" MODIFIED="1674879319513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ex3" />
+    <SUITE FILE_PATH="coverage/atividade_24_01_2023_mensageria_pub_sub_mqtt$publisher3.coverage" NAME="publisher3 Coverage Results" MODIFIED="1675202024770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ex3" />
   </component>
 </project>
