@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 import sd.api.rest.model.Usuario;
 import sd.api.rest.repository.UsuarioRepository;
 
@@ -16,6 +17,7 @@ import sd.api.rest.repository.UsuarioRepository;
  *
  * @author mathe
  */
+@Service
 public class ImplementacaoUserDetailsService implements UserDetailsService {
 
     @Autowired
