@@ -9,6 +9,6 @@ package sd.api.rest.model.enums;
  * @author mathe
  */
 public enum TipoUsuario {
-    ADMINISTRADOR,
-    COMUM
+    ADM,
+    USUARIOCOMUM
 }

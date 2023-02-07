@@ -6,6 +6,7 @@ package sd.api.rest.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import java.io.IOException;
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -48,7 +49,7 @@ public class JWTTokenAutenticacaoService {
     public void addAuthentication(
             HttpServletResponse response,
             String username
-    ) throws Exception {
+    ) throws IOException {
         /**
          * Montagem do token
          */
@@ -57,7 +58,7 @@ public class JWTTokenAutenticacaoService {
                 .setExpiration( // tempo de expiração
                         new Date(System.currentTimeMillis() + EXPIRATION_TIME)
                 )
-                .signWith(SignatureAlgorithm.ES512, SECRET) // Algoritmo de geração de senha
+                .signWith(SignatureAlgorithm.HS512, SECRET) // Algoritmo de geração de senha
                 .compact(); // compactação
 
         /**
@@ -99,7 +100,8 @@ public class JWTTokenAutenticacaoService {
 
             if (user != null) {
                 Usuario usuario = ApplicationContextLoad.getApplicationContext()
-                        .getBean(UsuarioRepository.class).findUserByLogin(user);
+                        .getBean(UsuarioRepository.class)
+                        .findUserByLogin(user);
 
                 /**
                  * Retornar o usuário logado
@@ -107,7 +109,7 @@ public class JWTTokenAutenticacaoService {
                 if (usuario != null) {
                     return new UsernamePasswordAuthenticationToken(
                             usuario.getEmail(),
-                            usuario.getSenhaCriptografada(),
+                            usuario.getSenha(),
                             usuario.getAuthorities()
                     );
                 }

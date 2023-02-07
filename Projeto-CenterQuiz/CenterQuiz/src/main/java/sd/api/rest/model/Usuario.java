@@ -72,7 +72,7 @@ public class Usuario implements UserDetails {
 
     private String email;
 
-    private String senhaCriptografada;
+    private String senha;
 
     private TipoUsuario tipoUsuario;
 
@@ -105,12 +105,12 @@ public class Usuario implements UserDetails {
         this.email = email;
     }
 
-    public String getSenhaCriptografada() {
-        return senhaCriptografada;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setSenhaCriptografada(String senhaCriptografada) {
-        this.senhaCriptografada = senhaCriptografada;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public TipoUsuario getTipoUsuario() {
@@ -160,7 +160,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public String toString() {
-        return "Usuario{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", senhaCriptografada=" + senhaCriptografada + ", tipoUsuario=" + tipoUsuario + ", dataNascimento=" + dataNascimento + ", endereco=" + endereco + '}';
+        return "Usuario{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", tipoUsuario=" + tipoUsuario + ", dataNascimento=" + dataNascimento + ", endereco=" + endereco + '}';
     }
 
     /**
@@ -175,7 +175,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getPassword() {
-        return this.senhaCriptografada;
+        return this.senha;
     }
 
     @Override
