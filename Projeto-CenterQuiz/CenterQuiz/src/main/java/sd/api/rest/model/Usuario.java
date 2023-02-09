@@ -4,11 +4,13 @@
  */
 package sd.api.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -64,12 +66,17 @@ public class Usuario implements UserDetails {
                             value = ConstraintMode.CONSTRAINT
                     )
             )
+            
                     
     )
     private List<Role> roles; // Papeis ou acessos
 
     private String nome;
 
+    /**
+     * Não pode haver mais de um cadastro com mesmo e-mail
+     */
+    @Column(unique = true)
     private String email;
 
     private String senha;
@@ -173,31 +180,37 @@ public class Usuario implements UserDetails {
         return roles;
     }
 
+    @JsonIgnore
     @Override
     public String getPassword() {
         return this.senha;
     }
 
+    @JsonIgnore
     @Override
     public String getUsername() {
         return this.nome;
     }
 
+    @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
+    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+    @JsonIgnore
     @Override
     public boolean isEnabled() {
         return true;

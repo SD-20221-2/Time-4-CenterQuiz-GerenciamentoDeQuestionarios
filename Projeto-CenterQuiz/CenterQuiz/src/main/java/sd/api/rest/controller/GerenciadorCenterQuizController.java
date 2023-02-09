@@ -13,6 +13,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,10 +27,13 @@ import sd.api.rest.model.ConclusaoQuestao;
 import sd.api.rest.model.Questao;
 import sd.api.rest.model.Questionario;
 import sd.api.rest.model.RegistroQuestionario;
+import sd.api.rest.model.Usuario;
+import sd.api.rest.model.enums.TipoUsuario;
 import sd.api.rest.repository.BancoDeQuestoesRepository;
 import sd.api.rest.repository.ConclusaoQuestaoRepository;
 import sd.api.rest.repository.QuestaoRepository;
 import sd.api.rest.repository.QuestionarioRepository;
+import sd.api.rest.repository.UsuarioRepository;
 
 /**
  *
@@ -51,25 +56,151 @@ public class GerenciadorCenterQuizController {
     @Autowired // se fosse CDI seria @Inject
     private ConclusaoQuestaoRepository conclusaoQuestaoRepository;
 
+    @Autowired // se fosse CDI seria @Inject
+    private UsuarioRepository usuarioRepository;
+
+    @GetMapping(value = "/id/{id}", produces = "application/json")
+    public ResponseEntity<Questao> obterQuestaoId(@PathVariable(value = "id") Long id) {
+        Optional<Questao> questao = questaoRepository.findById(id);
+
+        return new ResponseEntity(questao.get(), HttpStatus.OK);
+    }
+
+    public TipoUsuario obterTipoUsuario() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        String email;
+
+        if (principal instanceof UserDetails) {
+            email = ((UserDetails) principal).getUsername();
+        } else {
+            email = principal.toString();
+        }
+
+        Usuario usuario = usuarioRepository.findUserByLogin(email);
+
+        return usuario.getTipoUsuario();
+    }
+
     @GetMapping(
             value = "/adm/registro-questionario/todos",
             produces = "application/json"
     )
     public ResponseEntity<?>
             obterTodosRegistrosQuestionarioAdm(Pageable pageable) {
-        JSONObject jsonObjectPaginacaoRegistroQuestionarios = new JSONObject();
 
-        List<RegistroQuestionario> listaRegistroQuestionarios
-                = new ArrayList<>();
+        if (obterTipoUsuario() == TipoUsuario.ADM) {
+            JSONObject jsonObjectPaginacaoRegistroQuestionarios = new JSONObject();
 
-        Page<BancoDeQuestoes> paginacaoBancoDeQuestoes
-                = bancoDeQuestoesRepository.findAll(pageable);
+            List<RegistroQuestionario> listaRegistroQuestionarios
+                    = new ArrayList<>();
 
-        for (BancoDeQuestoes bancoDeQuestoes
-                : paginacaoBancoDeQuestoes.getContent()) {
+            Page<BancoDeQuestoes> paginacaoBancoDeQuestoes
+                    = bancoDeQuestoesRepository.findAll(pageable);
+
+            for (BancoDeQuestoes bancoDeQuestoes
+                    : paginacaoBancoDeQuestoes.getContent()) {
+                if (bancoDeQuestoes.getIdQuestionario() != null) {
+                    RegistroQuestionario registroQuestionario
+                            = new RegistroQuestionario();
+                    Optional<Questionario> questionarioTemp
+                            = questionarioRepository.findById(
+                                    bancoDeQuestoes.getIdQuestionario()
+                            );
+                    registroQuestionario.setQuestionario(
+                            questionarioTemp.get()
+                    );
+
+                    Long idBancoDeQuestoes = bancoDeQuestoes.getId();
+
+                    //Obter todas as questões com o correspondente idBancoDeQuestoes
+                    List<Questao> questoes
+                            = questaoRepository.findQuestoesByIdBancoDeQuestoes(
+                                    idBancoDeQuestoes
+                            );
+                    bancoDeQuestoes.setQuestoes(questoes);
+
+                    registroQuestionario.setBancoDeQuestoes(bancoDeQuestoes);
+                    listaRegistroQuestionarios.add(registroQuestionario);
+                }
+            }
+
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "content",
+                    listaRegistroQuestionarios
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "pageable",
+                    paginacaoBancoDeQuestoes.getPageable()
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "totalPages",
+                    paginacaoBancoDeQuestoes.getTotalPages()
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "totalElements",
+                    paginacaoBancoDeQuestoes.getTotalElements()
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "last",
+                    paginacaoBancoDeQuestoes.isLast()
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "size",
+                    paginacaoBancoDeQuestoes.getSize()
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "number",
+                    paginacaoBancoDeQuestoes.getNumber()
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "sort",
+                    paginacaoBancoDeQuestoes.getSort()
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "numberOfElements",
+                    paginacaoBancoDeQuestoes.getNumberOfElements()
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "first",
+                    paginacaoBancoDeQuestoes.isFirst()
+            );
+            jsonObjectPaginacaoRegistroQuestionarios.put(
+                    "empty",
+                    paginacaoBancoDeQuestoes.isEmpty()
+            );
+
+            return new ResponseEntity<>(
+                    jsonObjectPaginacaoRegistroQuestionarios, HttpStatus.OK
+            );
+        } else {
+            return new ResponseEntity<String>(
+                    "Usuário não autorizado para este end-point", HttpStatus.UNAUTHORIZED
+            );
+        }
+    }
+
+    /**
+     * Restringir apenas para usuário Administrador
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping(
+            value = "/adm/registro-questionario/id/{id}",
+            produces = "application/json"
+    )
+    public ResponseEntity<?>
+            ObterRegistroQuestionarioIdAdm(@PathVariable(value = "id") Long id) {
+        if (obterTipoUsuario() == TipoUsuario.ADM) {
+            Optional<BancoDeQuestoes> bancoDeQuestoesIdentificado
+                    = bancoDeQuestoesRepository.findById(id);
+            BancoDeQuestoes bancoDeQuestoes = bancoDeQuestoesIdentificado.get();
+
+            RegistroQuestionario registroQuestionario
+                    = new RegistroQuestionario();
             if (bancoDeQuestoes.getIdQuestionario() != null) {
-                RegistroQuestionario registroQuestionario
-                        = new RegistroQuestionario();
+
                 Optional<Questionario> questionarioTemp
                         = questionarioRepository.findById(
                                 bancoDeQuestoes.getIdQuestionario()
@@ -88,104 +219,16 @@ public class GerenciadorCenterQuizController {
                 bancoDeQuestoes.setQuestoes(questoes);
 
                 registroQuestionario.setBancoDeQuestoes(bancoDeQuestoes);
-                listaRegistroQuestionarios.add(registroQuestionario);
+
             }
-        }
-
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "content",
-                listaRegistroQuestionarios
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "pageable",
-                paginacaoBancoDeQuestoes.getPageable()
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "totalPages",
-                paginacaoBancoDeQuestoes.getTotalPages()
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "totalElements",
-                paginacaoBancoDeQuestoes.getTotalElements()
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "last",
-                paginacaoBancoDeQuestoes.isLast()
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "size",
-                paginacaoBancoDeQuestoes.getSize()
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "number",
-                paginacaoBancoDeQuestoes.getNumber()
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "sort",
-                paginacaoBancoDeQuestoes.getSort()
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "numberOfElements",
-                paginacaoBancoDeQuestoes.getNumberOfElements()
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "first",
-                paginacaoBancoDeQuestoes.isFirst()
-        );
-        jsonObjectPaginacaoRegistroQuestionarios.put(
-                "empty",
-                paginacaoBancoDeQuestoes.isEmpty()
-        );
-
-        return new ResponseEntity<>(
-                jsonObjectPaginacaoRegistroQuestionarios, HttpStatus.OK
-        );
-    }
-
-    /**
-     * Restringir apenas para usuário Administrador
-     *
-     * @param id
-     * @return
-     */
-    @GetMapping(
-            value = "/adm/registro-questionario/id/{id}",
-            produces = "application/json"
-    )
-    public ResponseEntity<RegistroQuestionario>
-            ObterRegistroQuestionarioIdAdm(@PathVariable(value = "id") Long id) {
-
-        Optional<BancoDeQuestoes> bancoDeQuestoesIdentificado
-                = bancoDeQuestoesRepository.findById(id);
-        BancoDeQuestoes bancoDeQuestoes = bancoDeQuestoesIdentificado.get();
-
-        RegistroQuestionario registroQuestionario
-                = new RegistroQuestionario();
-        if (bancoDeQuestoes.getIdQuestionario() != null) {
-
-            Optional<Questionario> questionarioTemp
-                    = questionarioRepository.findById(
-                            bancoDeQuestoes.getIdQuestionario()
-                    );
-            registroQuestionario.setQuestionario(
-                    questionarioTemp.get()
+            return new ResponseEntity<RegistroQuestionario>(
+                    registroQuestionario, HttpStatus.OK
             );
-
-            Long idBancoDeQuestoes = bancoDeQuestoes.getId();
-
-            //Obter todas as questões com o correspondente idBancoDeQuestoes
-            List<Questao> questoes
-                    = questaoRepository.findQuestoesByIdBancoDeQuestoes(
-                            idBancoDeQuestoes
-                    );
-            bancoDeQuestoes.setQuestoes(questoes);
-
-            registroQuestionario.setBancoDeQuestoes(bancoDeQuestoes);
-
+        } else {
+            return new ResponseEntity<String>(
+                    "Usuário não autorizado para este end-point", HttpStatus.UNAUTHORIZED
+            );
         }
-        return new ResponseEntity<RegistroQuestionario>(
-                registroQuestionario, HttpStatus.OK
-        );
     }
 
     /**
@@ -479,65 +522,70 @@ public class GerenciadorCenterQuizController {
     @PostMapping(
             value = "/adm/registro-questionario", produces = "application/json"
     )
-    public ResponseEntity<BancoDeQuestoes> cadastrarRegistroQuestionarioAdm(
+    public ResponseEntity<?> cadastrarRegistroQuestionarioAdm(
             @RequestBody RegistroQuestionario registroQuestionario
     ) {
+        if (obterTipoUsuario() == TipoUsuario.ADM) {
+            Questionario questionario = registroQuestionario.getQuestionario();
+            questionario.setId(null);
 
-        Questionario questionario = registroQuestionario.getQuestionario();
-        questionario.setId(null);
-
-        Questionario questionarioSalvo = questionarioRepository.save(
-                questionario
-        );
-
-        List<Long> idQuestoes = new ArrayList<>();
-        for (Questao questao
-                : registroQuestionario.getBancoDeQuestoes().getQuestoes()) {
-            questao.setId(null);//id criado automaticamente
-            questao.setIdBancoDeQuestoes(null);// peencher depois
-            Questao questaoSalva = questaoRepository.save(questao);
-            idQuestoes.add(questaoSalva.getId());
-        }
-
-        BancoDeQuestoes bancoDeQuestoesSalvo = bancoDeQuestoesRepository.save(
-                registroQuestionario.getBancoDeQuestoes()
-        );
-
-        //Atualizar o id do banco de questões, para cada questão cadastrada
-        List<Questao> questoesFinaisAtualizadas = new ArrayList<>();
-        for (Questao questao
-                : registroQuestionario.getBancoDeQuestoes().getQuestoes()) {
-            Questao questaoAtualizada = questaoRepository.getOne(
-                    idQuestoes.get(0)
+            Questionario questionarioSalvo = questionarioRepository.save(
+                    questionario
             );
-            questaoAtualizada.setIdBancoDeQuestoes(
-                    bancoDeQuestoesSalvo.getId()
-            );
-            Questao questaoAtualizadaFinal = questaoRepository.save(
-                    questaoAtualizada
-            );
-            questoesFinaisAtualizadas.add(questaoAtualizadaFinal);
-        }
 
-        BancoDeQuestoes bancoDeQuestoesFinal = new BancoDeQuestoes();
-        bancoDeQuestoesFinal.setId(bancoDeQuestoesSalvo.getId());
-        bancoDeQuestoesFinal.setIdQuestionario(
-                questionarioSalvo.getId()
-        );
-        bancoDeQuestoesFinal.setQuestoes(questoesFinaisAtualizadas);
+            List<Long> idQuestoes = new ArrayList<>();
+            for (Questao questao
+                    : registroQuestionario.getBancoDeQuestoes().getQuestoes()) {
+                questao.setId(null);//id criado automaticamente
+                questao.setIdBancoDeQuestoes(null);// peencher depois
+                Questao questaoSalva = questaoRepository.save(questao);
+                idQuestoes.add(questaoSalva.getId());
+            }
 
-        BancoDeQuestoes bancoDeQuestoesAtualizado
-                = bancoDeQuestoesRepository.getOne(
+            BancoDeQuestoes bancoDeQuestoesSalvo = bancoDeQuestoesRepository.save(
+                    registroQuestionario.getBancoDeQuestoes()
+            );
+
+            //Atualizar o id do banco de questões, para cada questão cadastrada
+            List<Questao> questoesFinaisAtualizadas = new ArrayList<>();
+            for (Questao questao
+                    : registroQuestionario.getBancoDeQuestoes().getQuestoes()) {
+                Questao questaoAtualizada = questaoRepository.getOne(
+                        idQuestoes.get(0)
+                );
+                questaoAtualizada.setIdBancoDeQuestoes(
                         bancoDeQuestoesSalvo.getId()
                 );
-        bancoDeQuestoesAtualizado.setIdQuestionario(
-                questionarioSalvo.getId()
-        );
-        bancoDeQuestoesRepository.save(bancoDeQuestoesAtualizado);
+                Questao questaoAtualizadaFinal = questaoRepository.save(
+                        questaoAtualizada
+                );
+                questoesFinaisAtualizadas.add(questaoAtualizadaFinal);
+            }
 
-        return new ResponseEntity<BancoDeQuestoes>(
-                bancoDeQuestoesFinal, HttpStatus.OK
-        );
+            BancoDeQuestoes bancoDeQuestoesFinal = new BancoDeQuestoes();
+            bancoDeQuestoesFinal.setId(bancoDeQuestoesSalvo.getId());
+            bancoDeQuestoesFinal.setIdQuestionario(
+                    questionarioSalvo.getId()
+            );
+            bancoDeQuestoesFinal.setQuestoes(questoesFinaisAtualizadas);
+
+            BancoDeQuestoes bancoDeQuestoesAtualizado
+                    = bancoDeQuestoesRepository.getOne(
+                            bancoDeQuestoesSalvo.getId()
+                    );
+            bancoDeQuestoesAtualizado.setIdQuestionario(
+                    questionarioSalvo.getId()
+            );
+            bancoDeQuestoesRepository.save(bancoDeQuestoesAtualizado);
+
+            return new ResponseEntity<BancoDeQuestoes>(
+                    bancoDeQuestoesFinal, HttpStatus.OK
+            );
+        } else {
+            return new ResponseEntity<String>(
+                    "Usuário não autorizado para este end-point", HttpStatus.UNAUTHORIZED
+            );
+        }
     }
 
     @PostMapping(
@@ -605,55 +653,64 @@ public class GerenciadorCenterQuizController {
 
     @GetMapping(value = "/adm/conclusao/todos", produces = "application/json")
     public ResponseEntity<?> obterConclusoes(Pageable pageable) {
-        Page<ConclusaoQuestao> paginacaoConclusoes = conclusaoQuestaoRepository.findAll(pageable);
+        if (obterTipoUsuario() == TipoUsuario.ADM) {
 
-        JSONObject jsonRetorno = new JSONObject();
-        
-        jsonRetorno.put(
-                "content",
-                paginacaoConclusoes.getContent()
-        );
-        jsonRetorno.put(
-                "pageable",
-                paginacaoConclusoes.getPageable()
-        );
-        jsonRetorno.put(
-                "totalPages",
-                paginacaoConclusoes.getTotalPages()
-        );
-        jsonRetorno.put(
-                "totalElements",
-                paginacaoConclusoes.getTotalElements()
-        );
-        jsonRetorno.put(
-                "last",
-                paginacaoConclusoes.isLast()
-        );
-        jsonRetorno.put(
-                "size",
-                paginacaoConclusoes.getSize()
-        );
-        jsonRetorno.put(
-                "number",
-                paginacaoConclusoes.getNumber()
-        );
-        jsonRetorno.put(
-                "sort",
-                paginacaoConclusoes.getSort()
-        );
-        jsonRetorno.put(
-                "numberOfElements",
-                paginacaoConclusoes.getNumberOfElements()
-        );
-        jsonRetorno.put(
-                "first",
-                paginacaoConclusoes.isFirst()
-        );
-        jsonRetorno.put(
-                "empty",
-                paginacaoConclusoes.isEmpty()
-        );
-        
-        return new ResponseEntity<>(jsonRetorno, HttpStatus.OK);
+            Page<ConclusaoQuestao> paginacaoConclusoes = conclusaoQuestaoRepository.findAll(pageable);
+
+            JSONObject jsonRetorno = new JSONObject();
+
+            jsonRetorno.put(
+                    "content",
+                    paginacaoConclusoes.getContent()
+            );
+            jsonRetorno.put(
+                    "pageable",
+                    paginacaoConclusoes.getPageable()
+            );
+            jsonRetorno.put(
+                    "totalPages",
+                    paginacaoConclusoes.getTotalPages()
+            );
+            jsonRetorno.put(
+                    "totalElements",
+                    paginacaoConclusoes.getTotalElements()
+            );
+            jsonRetorno.put(
+                    "last",
+                    paginacaoConclusoes.isLast()
+            );
+            jsonRetorno.put(
+                    "size",
+                    paginacaoConclusoes.getSize()
+            );
+            jsonRetorno.put(
+                    "number",
+                    paginacaoConclusoes.getNumber()
+            );
+            jsonRetorno.put(
+                    "sort",
+                    paginacaoConclusoes.getSort()
+            );
+            jsonRetorno.put(
+                    "numberOfElements",
+                    paginacaoConclusoes.getNumberOfElements()
+            );
+            jsonRetorno.put(
+                    "first",
+                    paginacaoConclusoes.isFirst()
+            );
+            jsonRetorno.put(
+                    "empty",
+                    paginacaoConclusoes.isEmpty()
+            );
+
+            return new ResponseEntity<>(jsonRetorno, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(
+                    "Usuário não autorizado para este end-point",
+                    HttpStatus.UNAUTHORIZED
+            );
+
+        }
     }
 }

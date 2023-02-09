@@ -95,7 +95,10 @@ public class JWTTokenAutenticacaoService {
              * Faz a validação do token do usuário na requisição
              */
             String user = Jwts.parser().setSigningKey(SECRET)
-                    .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
+                    .parseClaimsJws(token.replace(
+                            TOKEN_PREFIX,
+                            "")
+                    )
                     .getBody().getSubject(); // Nome do usuário
 
             if (user != null) {
