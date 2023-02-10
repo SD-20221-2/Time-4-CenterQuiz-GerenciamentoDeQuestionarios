@@ -60,14 +60,19 @@ public class GerenciadorCenterQuizController {
     private UsuarioRepository usuarioRepository;
 
     @GetMapping(value = "/id/{id}", produces = "application/json")
-    public ResponseEntity<Questao> obterQuestaoId(@PathVariable(value = "id") Long id) {
+    public ResponseEntity<Questao> obterQuestaoId(
+            @PathVariable(value = "id") Long id
+    ) {
         Optional<Questao> questao = questaoRepository.findById(id);
 
         return new ResponseEntity(questao.get(), HttpStatus.OK);
     }
 
     public TipoUsuario obterTipoUsuario() {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Object principal = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getPrincipal();
 
         String email;
 
@@ -80,6 +85,25 @@ public class GerenciadorCenterQuizController {
         Usuario usuario = usuarioRepository.findUserByLogin(email);
 
         return usuario.getTipoUsuario();
+    }
+    
+    public Long obterIdUsuarioLogado() {
+        Object principal = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getPrincipal();
+
+        String email;
+
+        if (principal instanceof UserDetails) {
+            email = ((UserDetails) principal).getUsername();
+        } else {
+            email = principal.toString();
+        }
+
+        Usuario usuario = usuarioRepository.findUserByLogin(email);
+
+        return usuario.getId();
     }
 
     @GetMapping(
@@ -175,7 +199,8 @@ public class GerenciadorCenterQuizController {
             );
         } else {
             return new ResponseEntity<String>(
-                    "Usuário não autorizado para este end-point", HttpStatus.UNAUTHORIZED
+                    "Usuário não autorizado para este end-point",
+                    HttpStatus.UNAUTHORIZED
             );
         }
     }
@@ -226,7 +251,8 @@ public class GerenciadorCenterQuizController {
             );
         } else {
             return new ResponseEntity<String>(
-                    "Usuário não autorizado para este end-point", HttpStatus.UNAUTHORIZED
+                    "Usuário não autorizado para este end-point",
+                    HttpStatus.UNAUTHORIZED
             );
         }
     }
@@ -271,20 +297,12 @@ public class GerenciadorCenterQuizController {
                         "nome", questionarioTemp.get().getNome()
                 );
                 jsonObjectQuestionario.put(
-                        "tipoQuestionario",
-                        questionarioTemp.get().isTipoQuestionario()
-                );
-                jsonObjectQuestionario.put(
                         "dataInicio",
                         questionarioTemp.get().getDataInicio()
                 );
                 jsonObjectQuestionario.put(
                         "dataFim",
                         questionarioTemp.get().getDataFim()
-                );
-                jsonObjectQuestionario.put(
-                        "duracao",
-                        questionarioTemp.get().getDuracao()
                 );
 
                 jsonObjectRegistroQuestionario.put(
@@ -442,17 +460,10 @@ public class GerenciadorCenterQuizController {
                     "nome", questionarioTemp.get().getNome()
             );
             jsonObjectQuestionario.put(
-                    "tipoQuestionario",
-                    questionarioTemp.get().isTipoQuestionario()
-            );
-            jsonObjectQuestionario.put(
                     "dataInicio", questionarioTemp.get().getDataInicio()
             );
             jsonObjectQuestionario.put(
                     "dataFim", questionarioTemp.get().getDataFim()
-            );
-            jsonObjectQuestionario.put(
-                    "duracao", questionarioTemp.get().getDuracao()
             );
 
             jsonObjectRegistroQuestionario.put(
@@ -583,7 +594,8 @@ public class GerenciadorCenterQuizController {
             );
         } else {
             return new ResponseEntity<String>(
-                    "Usuário não autorizado para este end-point", HttpStatus.UNAUTHORIZED
+                    "Usuário não autorizado para este end-point",
+                    HttpStatus.UNAUTHORIZED
             );
         }
     }
@@ -603,8 +615,6 @@ public class GerenciadorCenterQuizController {
         }
 
         Optional<Questao> questao = questaoRepository.findById(idQuestao);
-
-        System.err.println(questao.get());
 
         boolean respostaCorreta = false;
         if (respostaJsonObject.containsKey("respostas")) {
@@ -638,7 +648,7 @@ public class GerenciadorCenterQuizController {
         if (respostaCorreta) {
             ConclusaoQuestao conclusaoQuestao = new ConclusaoQuestao();
             conclusaoQuestao.setIdQuestao(idQuestao);
-            conclusaoQuestao.setIdUsuario(0L); // IMPUTAR O ID DO USUÁRIO LOGADO
+            conclusaoQuestao.setIdUsuario(obterIdUsuarioLogado()); // IMPUTAR O ID DO USUÁRIO LOGADO
             conclusaoQuestao.setIdQuestao(idQuestao);
             System.out.println(new Date());
             conclusaoQuestao.setDataConclusao(new Date());
@@ -655,7 +665,8 @@ public class GerenciadorCenterQuizController {
     public ResponseEntity<?> obterConclusoes(Pageable pageable) {
         if (obterTipoUsuario() == TipoUsuario.ADM) {
 
-            Page<ConclusaoQuestao> paginacaoConclusoes = conclusaoQuestaoRepository.findAll(pageable);
+            Page<ConclusaoQuestao> paginacaoConclusoes
+                    = conclusaoQuestaoRepository.findAll(pageable);
 
             JSONObject jsonRetorno = new JSONObject();
 

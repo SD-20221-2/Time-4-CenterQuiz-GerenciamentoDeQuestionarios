@@ -32,16 +32,12 @@ public class Questionario implements Serializable{
 	private Long id;
 	
 	private String nome;
-	private boolean tipoQuestionario;
-        
         
         @Temporal(javax.persistence.TemporalType.DATE)
 	private Date dataInicio;
 	
         @Temporal(javax.persistence.TemporalType.DATE)
         private Date dataFim;
-	
-        private Long duracao;
 	
 	public Long getId() {
 		return id;
@@ -59,14 +55,6 @@ public class Questionario implements Serializable{
 		this.nome = nome;
 	}
 
-	public boolean isTipoQuestionario() {
-		return tipoQuestionario;
-	}
-
-	public void setTipoQuestionario(boolean tipoQuestionario) {
-		this.tipoQuestionario = tipoQuestionario;
-	}
-
 	public Date getDataInicio() {
 		return dataInicio;
 	}
@@ -81,14 +69,6 @@ public class Questionario implements Serializable{
 
 	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
-	}
-
-	public Long getDuracao() {
-		return duracao;
-	}
-
-	public void setDuracao(Long duracao) {
-		this.duracao = duracao;
 	}
 
 	@Override
@@ -110,7 +90,7 @@ public class Questionario implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Questionario [id=" + id + ", nome=" + nome + ", tipoQuestionario=" + tipoQuestionario + ", dataInicio="
-				+ dataInicio + ", dataFim=" + dataFim + ", duracao=" + duracao + "]";
+		return "Questionario [id=" + id + ", nome=" + nome + ", dataInicio="
+				+ dataInicio + ", dataFim=" + dataFim + "]";
 	}
 }
