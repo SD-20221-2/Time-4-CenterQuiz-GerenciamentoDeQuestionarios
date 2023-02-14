@@ -122,3 +122,56 @@ RMI:
     * Não, o Remote Method Invocation (RMI) não é exclusivo do Java. RMI é um conceito genérico que pode ser implementado em várias linguagens de programação diferentes. No entanto, a implementação específica de RMI no Java é amplamente utilizada e fornece uma maneira conveniente e fácil de invocar métodos em objetos remotos na plataforma Java. Outras linguagens, como C++ e Python, também possuem suas próprias implementações de RMI ou equivalentes.
 * qual a definição de serviço de diretório?
     * Um serviço de diretório é um tipo de serviço de nomes que fornece uma estrutura centralizada de dados para armazenar e recuperar informações de identificação de recursos em sistemas distribuídos. Essas informações incluem informações sobre objetos, usuários, grupos e aplicativos, entre outros. O serviço de diretório usa uma estrutura hierárquica para organizar informações, permitindo que informações sejam facilmente localizadas e recuperadas. Alguns exemplos de serviços de diretório incluem o Microsoft Active Directory, o Novell eDirectory e o OpenLDAP. O serviço de diretório é amplamente utilizado para autenticação de usuários, gerenciamento de identidade e controle de acesso a recursos em sistemas distribuídos.
+
+<hr/><hr/><hr/>
+
+# Livro
+enquanto o RMI é uma tecnologia Java que permite a invocação de objetos remotos. Ambas as tecnologias são úteis em sistemas distribuídos, mas o DNS é usado para resolução de nomes em uma ampla gama de sistemas, enquanto o RMI é usado especificamente para a invocação de objetos remotos na plataforma Java.
+* RMI é exclusiva do Java?
+    * Não, o Remote Method Invocation (RMI) não é exclusivo do Java. RMI é um conceito genérico que pode ser implementado em várias linguagens de programação diferentes. No entanto, a implementação específica de RMI no Java é amplamente utilizada e fornece uma maneira conveniente e fácil de invocar métodos em objetos remotos na plataforma Java. Outras linguagens, como C++ e Python, também possuem suas próprias implementações de RMI ou equivalentes.
+* qual a definição de serviço de diretório?
+    * Um serviço de diretório é um tipo de serviço de nomes que fornece uma estrutura centralizada de dados para armazenar e recuperar informações de identificação de recursos em sistemas distribuídos. Essas informações incluem informações sobre objetos, usuários, grupos e aplicativos, entre outros. O serviço de diretório usa uma estrutura hierárquica para organizar informações, permitindo que informações sejam facilmente localizadas e recuperadas. Alguns exemplos de serviços de diretório incluem o Microsoft Active Directory, o Novell eDirectory e o OpenLDAP. O serviço de diretório é amplamente utilizado para autenticação de usuários, gerenciamento de identidade e controle de acesso a recursos em sistemas distribuídos.
+
+<hr/><hr/><hr/>
+
+# Livro
+## 1. Introdução - pg 566
+* A atribuição de nomes é um problema facilemente desprezado, mas com certeza fundamental no projeto de sistemas distribuídos.
+    * Nomes facilitam a comunicação e o compartilhamento de recursos.
+    * Ex:
+        * é necessário um nome na forma de um URL para acessar uma página WEB.
+        * Endereços de e-mail.
+        * DNS (Domain Name Service)
+        * GNS (Global Name Service)
+        * X.500
+### Nomes, endereços e outros atributos.
+* Needham [1993]
+    * Nomes puros:
+        * são simplesmente padrões de bits não interpretados.
+    * Nomes não puros:
+        * contêm informações sobre o objeto que nomeiam; em particular, podem conter informações sobre a localização do objeto.
+* Binding (vínculo): Associação entre um nome e um objeto.
+* <b>DNS</b>:
+    * faz o mapeamento de nomes de domínio Internet para atributos de um computador: seu endereço IP, o tipo de entrada (por exemplo, uma referência a uma serviço de correio eletrônico ou a outro computador) e, por exemplo, o período de tempo durante o qual a entrada desse computador permanecerá válida.
+* <b>X500</b>
+    * serviço de diretório que pode ser usado para fazer o mapeamento do nome de uma pessoa em atributos, incluindo ser endereço de e-mail e o número de telefone.
+* <b>CORBA</b>
+    * Serviço de nomes (Naming Service) e Serviço de negociação (Trading Service).
+    * Serviço de nomes:
+        * faz o mapeamento do nome de um objeto remoto para sua referência de objeto remota.
+    * Serviço de negociação:
+        * faz o mesmo mapeamento junto a um número arbitrário de atributos descrevendo o objeto em termos inteligíveis por usuários humanos.
+
+* <b>URI</b> - Uniform Resource Identifiers
+    * Surgiram da necessidade de identificar recursos Web e outros recursos de Internet, como as caixas de corrêncio eletrônico.
+    * Um objetivo importante era identificar esses recursos de maneira coerente, de modo que todos pudessem ser processados por um software comum, como os navagadores.
+
+* <b>URL</b> - Uniform Resource Locators
+    * é frequentemente usado para URIs que fornecem informações de localização e especificam o método para acessar um recurso, incluindo os URLs http.
+
+## 2. Serviços de nomes e o DNS (Domain Name System) - pg 569
+
+## 3. Serviços de diretório - pg 584
+## 4. Estudo de caso: Global Name Service - pg 585
+## 5. Estudo de caso: X.500 Directory Service - pg 588
+## 6. Resumo - pg 592
