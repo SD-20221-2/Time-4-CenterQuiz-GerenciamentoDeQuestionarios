@@ -19,11 +19,13 @@ import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import sd.api.rest.model.Usuario;
 import sd.api.rest.model.enums.TipoUsuario;
 import sd.api.rest.repository.UsuarioRepository;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "api/")
 public class QuestaoController {

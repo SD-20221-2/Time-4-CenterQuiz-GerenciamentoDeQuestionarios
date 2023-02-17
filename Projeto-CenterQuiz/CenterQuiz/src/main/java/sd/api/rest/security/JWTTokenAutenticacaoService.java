@@ -14,6 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import sd.api.rest.ApplicationContextLoad;
 import sd.api.rest.model.Usuario;
 import sd.api.rest.repository.UsuarioRepository;
@@ -72,6 +73,11 @@ public class JWTTokenAutenticacaoService {
         response.addHeader(HEADER_STRING, token);
 
         /**
+         * Liberando ressposta par porta diferente do projeto Angular
+         */
+        response.addHeader("Access-Control-Allow-Origin", "*");
+
+        /**
          * Escreve token como responsta no corpo do HTTP
          */
         response.getWriter().write(
@@ -84,7 +90,10 @@ public class JWTTokenAutenticacaoService {
      * Retorna o usuário validado com token ou caso não seja válido, retorna
      * null
      */
-    public Authentication getAuthentication(HttpServletRequest request) {
+    public Authentication getAuthentication(
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
         /**
          * Pega o token enviado no cabeçalho HTTP
          */
@@ -120,6 +129,12 @@ public class JWTTokenAutenticacaoService {
 
         }
 
+        /**
+         * Liberando ressposta par porta diferente do projeto Angular
+         */
+        response.addHeader("Access-Control-Allow-Origin", "*");
+        
         return null;
+        /* Não autorizaddo */
     }
 }

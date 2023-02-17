@@ -1,0 +1,55 @@
+.app-theme-white .app-footer .app-footer__inner, .app-theme-white .app-header {
+    background: #1f1717;
+}
+
+.scrollbar-sidebar {
+	background: #1f1717;
+}
+
+.app-theme-white.fixed-header .app-header__logo {
+    background: rgb(250 251 252 / 0%);
+}
+
+.app-sidebar__heading {
+    text-transform: uppercase;
+    font-size: .8rem;
+    margin: .75rem 0;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+    position: relative;
+}
+
+.nav {
+    --bs-nav-link-padding-x: 1rem;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: var(white);
+    --bs-nav-link-hover-color: var(white);
+    --bs-nav-link-disabled-color: #6c757d;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-link {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: #ffffff;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #3f6ad8;
+    border-color: #3f6ad8;
+}
+
+.widget-heading {
+	color:#55a162;
+}
