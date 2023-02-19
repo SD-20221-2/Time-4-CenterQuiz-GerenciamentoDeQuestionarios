@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
@@ -13,6 +12,7 @@ import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { CadastrarQuestionarioComponent } from './component/cadastrar-questionario/cadastrar-questionario.component';
 import { QuestionarioComponent } from './component/questionario/questionario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export const appRouters: Routes = [
 	{
@@ -54,10 +54,11 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters)
 	],
 	imports: [
 		BrowserModule,
-		FormsModule,
 		HttpClientModule,
 		routes,
-		HttpInterceptorModule
+		HttpInterceptorModule,
+		FormsModule,
+		ReactiveFormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

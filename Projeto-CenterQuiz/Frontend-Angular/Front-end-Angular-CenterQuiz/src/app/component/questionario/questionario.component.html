@@ -6,55 +6,147 @@
 
 	<div class="container-fluid">
 
-		<div class="jumbotron">
-			<h3>{{nomeQuestionario}}</h3>
-		</div>
+		<form>
 
-		<div class="card border-info mb-4 "
-			*ngFor="let questao of bancoDeQuestoes.questoes">
-		
-			<div class="d-flex justify-content-between align-items-center card-header bg-info text-white" id="h1">
-				<span>{{questao.titulo}}</span>
-				<button type="button" data-toggle="collapse" data-target="#q1" aria-expanded="false" aria-controls="q1"
-					class="btn btn-outline-light"><svg width="1em" height="1em" viewBox="0 0 16 16"
-						class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd"
-							d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-					</svg>
-				</button>
+			<div class="card border-info mb-4" *ngFor="let questao of questionario.questoes">
+				<div class="d-flex justify-content-between align-items-center card-header bg-info text-white" id="h1">
+					<span>{{questao.titulo}}</span>
+					<button type="button" data-toggle="collapse" data-target="#q1" aria-expanded="false"
+						aria-controls="q1" class="btn btn-outline-light"><svg width="1em" height="1em"
+							viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd"
+								d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+						</svg>
+					</button>
+				</div>
+				<div class="form-check" *ngFor="let opcao of questao.opcoes">
+					<input class="form-check-input" type="checkbox" [name]="questao.id" [value]="opcao.valor"
+						(change)="selecionarOpcao(questao.id, opcao)" [checked]="opcao.selecionada" />
+					<label class="form-check-label">{{ opcao.valor }}</label>
+				</div>
+			</div>
+			<button type="button" (click)="enviarRespostas()">Enviar respostas</button>
+		</form>
+
+
+
+
+
+		<!--
+		<form>
+			<!--
+			<div class="card border-info mb-4 "
+				*ngFor="let questao of bancoDeQuestoes.questoes; let iterQuestoes = index;">
+
+				<div class="d-flex justify-content-between align-items-center card-header bg-info text-white" id="h1">
+					<span>{{questao.titulo}}</span>
+					<button type="button" data-toggle="collapse" data-target="#q1" aria-expanded="false"
+						aria-controls="q1" class="btn btn-outline-light"><svg width="1em" height="1em"
+							viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd"
+								d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+						</svg>
+					</button>
+				</div>
+
+				<div id="q1" class="collapse show" aria-labelledby="h1">
+					<div class="card-body">
+						<p>{{questao.texto}}</p>
+
+						<div class="form-check" *ngFor="let opcao of questao.opcoes; let iterOpcoes = index">
+							<input [(ngModel)]="respostasQuestoes" class="form-check-input" type="checkbox"
+								name="questao_{{iterQuestoes}}_opcao_{{iterOpcoes}}"
+								id="questao_{{iterQuestoes}}_id_{{iterOpcoes}}"
+								value="questao_{{iterQuestoes}}_valor_{{iterOpcoes}}">
+							<label class="form-check-label" for="questao_{{iterQuestoes}}_id_{{iterOpcoes}}">
+								{{opcao}}
+							</label>
+						</div>
+
+
+
+					</div>
+
+				</div>
 			</div>
 			
-			<div id="q1" class="collapse show" aria-labelledby="h1">
-				<div class="card-body">
-					<p>{{questao.texto}}</p>
 
-					<div class="form-check" *ngFor="let opcao of questao.opcoes">
-						<input class="form-check-input" type="checkbox" name="q1" id="q1_r1" value="r1">
-						<label class="form-check-label" for="q1_r1">
-							{{opcao}}
+
+			<button type="button" class="btn btn-success">Enviar</button>
+			<br /><br /><br />-->
+
+		<!--<div *ngFor="let questao of questoes; let iterQuestoes = index">
+				<p>{{ questao.titulo }}</p>
+				<p>{{ questao.texto }}</p>
+				<div *ngFor="let opcao of questao.opcoes; let iterOpcoes = index">
+					<input type="checkbox" name="{{ iterQuestoes }}" [value]="iterOpcoes"
+						(change)="respostas[iterQuestoes] = $event.target.checked">{{ opcao }}
+				</div>
+			</div>
+			<button (click)="enviarRespostas()">Enviar</button>
+			
+			<form>
+				<!--<div *ngIf="questionario">
+					<h2>{{ questionario.titulo }}</h2>
+					<p>{{ questionario.descricao }}</p>
+					<form (ngSubmit)="enviarQuestionario()">
+						<div *ngFor="let questao of questionario.questoes">
+							<h3>{{ questao.titulo }}</h3>
+							<p>{{ questao.texto }}</p>
+							<div *ngFor="let opcao of questao.opcoes">
+								<input type="checkbox" name="opcao" [(ngModel)]="opcao.selecionada" [value]="opcao" />
+								{{ opcao }}
+							</div>
+						</div>
+						<button type="submit">Enviar</button>
+					</form>
+				</div>
+				-->
+
+		<!--<div *ngFor="let questao of questionario.questoes">
+					<h4>{{ questao.titulo }}</h4>
+					<p>{{ questao.texto }}</p>
+					<div *ngFor="let opcao of questao.opcoes; let i = index">
+						<label>
+							<input type="checkbox" name="opcao{{ questao.id }}"
+								[checked]="respostas[questao.id]?.includes(i)"
+								(change)="selecionarOpcao(questao.id, i)">
+							{{ opcao }}
 						</label>
 					</div>
-
 				</div>
+				
+			
+				<div *ngFor="let questao of questionario.questoes">
+					<h3>{{ questao.titulo }}</h3>
+					<p>{{ questao.texto }}</p>
+					<ul>
+						<li *ngFor="let opcao of questao.opcoes">
+							<label>
+								<!--<input type="checkbox" [(ngModel)]="questao.selecionada"
+									(change)="selecionarOpcao(questao, opcao)">-->
+		<!--<input type="checkbox" [checked]="opcao === questao.selecionada"
+									(change)="selecionarOpcao(opcao)" [name]="opcao">
 
-			</div>
-		</div>
+								<input type="checkbox" [checked]="opcao === questao.selecionada"
+									(change)="selecionarOpcao(questao, opcao)">
 
-		<h3>Result</h3>
-
-		<div class="card">
-			<div class="card-body">
-				<p id="result">No result.</p>
-
-				<div class="progress mb-2">
-					<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-						aria-valuemax="100">
-					</div>
+								{{ opcao }}
+							</label>
+						</li>
+					</ul>
 				</div>
+				<button (click)="enviarRespostas()">Enviar respostas</button>
 
-				<button type="button" class="btn btn-success">Update</button>
-			</div>
-		</div>
+
+
+			</form>
+		</form>
+		-->
+
+
 
 	</div>
 </div>
