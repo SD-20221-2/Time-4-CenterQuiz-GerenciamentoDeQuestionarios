@@ -3,46 +3,63 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
 import { HttpInterceptorModule } from './service/header-interceptor.service';
-
+import { UsuarioComponent } from './component/usuario/usuario/usuario.component';
+import { HomeComponent } from './component/home/home.component';
+import { LoginComponent } from './component/login/login.component';
+import { CadastrarQuestionarioComponent } from './component/cadastrar-questionario/cadastrar-questionario.component';
+import { QuestionarioComponent } from './component/questionario/questionario.component';
 
 export const appRouters: Routes = [
-  	{	
-    	path : '',
-		component : LoginComponent
-	},
-	{	
-    	path : 'home',
-		component : HomeComponent
+	{
+		path: '',
+		component: LoginComponent
 	},
 	{
-    	path: 'login',
-    	component: LoginComponent
-  	}
+		path: 'home',
+		component: HomeComponent
+	},
+	{
+		path: 'login',
+		component: LoginComponent
+	},
+	{
+		path: 'usuarios',
+		component: UsuarioComponent
+	},
+	{
+		path: 'cadastrar-questionario',
+		component: CadastrarQuestionarioComponent
+	},
+	{
+		path: 'questionario',
+		component: QuestionarioComponent
+	}
 ];
 
-export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters)
+export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters)
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    LoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    routes,
-    HttpInterceptorModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		LoginComponent,
+		HomeComponent,
+		UsuarioComponent,
+		CadastrarQuestionarioComponent,
+		QuestionarioComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpClientModule,
+		routes,
+		HttpInterceptorModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

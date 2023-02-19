@@ -10,4 +10,8 @@ export class AppConstants {
 	public static get baseUrl(): string {
 		return this.baseServidor + ""
 	}
+	
+	public static get baseApi(): string {
+		return this.baseServidor + "centerquiz/"
+	}
 }

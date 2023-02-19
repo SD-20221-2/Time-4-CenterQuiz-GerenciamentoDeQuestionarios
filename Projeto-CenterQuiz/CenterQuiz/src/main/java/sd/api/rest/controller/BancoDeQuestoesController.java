@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -61,10 +62,32 @@ public class BancoDeQuestoesController {
     ) {
         if (obterTipoUsuario() == TipoUsuario.ADM) {
 
-            Optional<BancoDeQuestoes> banco =
-                    bancoDeQuestoesRepository.findById(id);
+            Optional<BancoDeQuestoes> banco
+                    = bancoDeQuestoesRepository.findById(id);
 
             return new ResponseEntity(banco.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity(
+                    "Usuário não autorizado para este end-point",
+                    HttpStatus.UNAUTHORIZED
+            );
+
+        }
+    }
+
+    @GetMapping(
+            value = "/obter-banco-id-questionario/id/{id}",
+            produces = "application/json"
+    )
+    public ResponseEntity obterBancoDeQuestoesPorIdQuestionario(
+            @PathVariable(value = "id") Long idQuestionario
+    ) {
+        if (obterTipoUsuario() == TipoUsuario.ADM) {
+
+            BancoDeQuestoes bancoDeQuestoesLocal = bancoDeQuestoesRepository
+                    .findBancoDeQuestoesByIdQuestionario(idQuestionario);
+
+            return new ResponseEntity(bancoDeQuestoesLocal, HttpStatus.OK);
         } else {
             return new ResponseEntity(
                     "Usuário não autorizado para este end-point",

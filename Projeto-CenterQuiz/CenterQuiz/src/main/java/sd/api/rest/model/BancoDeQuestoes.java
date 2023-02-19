@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OrderBy;
+import org.hibernate.annotations.Sort;
 
 @Entity
 public class BancoDeQuestoes implements Serializable {
@@ -25,6 +27,7 @@ public class BancoDeQuestoes implements Serializable {
     private Long idAdministrador;
     
     @ElementCollection
+    @OrderBy("id ASC")
     private List<Questao> questoes = new ArrayList<Questao>();
 
     public Long getId() {

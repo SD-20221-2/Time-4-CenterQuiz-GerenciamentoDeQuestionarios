@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from './service/app.service';
 import { LoginServiceService } from './service/LoginService.service';
 
 
@@ -9,18 +10,17 @@ import { LoginServiceService } from './service/LoginService.service';
 	styleUrls: ['./app.component.css']
 })
 
-
-
 export class AppComponent implements OnInit {
 	title = 'Front-end-Angular-CenterQuiz';
-	constructor(private router: Router) {
+	constructor(private router: Router, private appService: AppService) {
 
 	}
+
 	ngOnInit(): void {
-		console.log("teste: " + localStorage.getItem('token'));
 		if (localStorage.getItem('token') == null) {
 			this.router.navigate(['login'])
 		}
+
 	}
 
 	public sair() {
@@ -29,8 +29,7 @@ export class AppComponent implements OnInit {
 	}
 
 	public esconderMenu() {
-    	console.log("Aqui: " + localStorage.getItem('token'))
-    
+
 		if (localStorage.getItem('token') == null) {
 			return true;
 		} else {
@@ -38,5 +37,17 @@ export class AppComponent implements OnInit {
 		}
 	}
 
+	public isAdm() {
+
+		if (localStorage.getItem("isAdm") == "Sim") {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public getNomeUsuario() {
+		return localStorage.getItem("nomeUsuario");
+	}
 
 }

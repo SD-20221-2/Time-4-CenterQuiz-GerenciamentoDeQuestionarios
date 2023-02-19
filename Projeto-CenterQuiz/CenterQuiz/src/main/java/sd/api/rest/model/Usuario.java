@@ -6,12 +6,16 @@ package sd.api.rest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
@@ -87,6 +91,9 @@ public class Usuario implements UserDetails {
     private Date dataNascimento;
 
     private String endereco;
+    
+    @ElementCollection
+    private Map<Long, Long> questionariosFeitos = new HashMap<>();
 
     public Long getId() {
         return id;
@@ -144,6 +151,14 @@ public class Usuario implements UserDetails {
         this.endereco = endereco;
     }
 
+    public Map<Long, Long> getQuestionariosFeitos() {
+        return questionariosFeitos;
+    }
+
+    public void setQuestionariosFeitos(Map<Long, Long> questionariosFeitos) {
+        this.questionariosFeitos = questionariosFeitos;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
