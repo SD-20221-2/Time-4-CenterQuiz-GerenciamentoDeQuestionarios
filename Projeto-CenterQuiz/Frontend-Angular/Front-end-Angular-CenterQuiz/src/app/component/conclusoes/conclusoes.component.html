@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="mat-dialog-container" >
+	<div class="container modal fade show d-block" style="background-color: white; border-color: black;">
+		<h2>Conclusões da questão</h2>
+		<p>Abaixo, você pode conferir as suas respostas:</p>
+		<hr>
+
+		<div *ngFor="let conclusao of conclusoes; let i = index">
+			<h4>Conclusao {{ i + 1 }} - {{ conclusao.dataConclusao }}</h4>
+			<p>Sua resposta: </p>
+			<div *ngIf="conclusao.acertou === 'SIM'">
+				<p class="text-success">Você acertou!</p>
+			</div>
+			<div *ngIf="conclusao.acertou === 'NÃO'">
+				<p class="text-danger">Você errou. A resposta correta era: </p>
+			</div>
+			<hr>
+		</div>
+
+		<button type="button" class="btn btn-primary" (click)="fecharConclusoes()">Fechar</button>
+	</div>
+</div>

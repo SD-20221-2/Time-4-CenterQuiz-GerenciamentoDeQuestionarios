@@ -13,6 +13,11 @@ import { LoginComponent } from './component/login/login.component';
 import { CadastrarQuestionarioComponent } from './component/cadastrar-questionario/cadastrar-questionario.component';
 import { QuestionarioComponent } from './component/questionario/questionario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConclusoesComponent } from './component/conclusoes/conclusoes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
+
 
 export const appRouters: Routes = [
 	{
@@ -50,7 +55,8 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters)
 		HomeComponent,
 		UsuarioComponent,
 		CadastrarQuestionarioComponent,
-		QuestionarioComponent
+		QuestionarioComponent,
+  ConclusoesComponent
 	],
 	imports: [
 		BrowserModule,
@@ -58,9 +64,11 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters)
 		routes,
 		HttpInterceptorModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		MatDialogModule,
+		BrowserAnimationsModule
 	],
-	providers: [],
+	providers: [DatePipe],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
