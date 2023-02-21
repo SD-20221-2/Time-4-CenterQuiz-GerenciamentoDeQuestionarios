@@ -1,13 +1,15 @@
 package sd.api.rest.controller;
 
-import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import net.minidev.json.JSONArray;
+import java.util.stream.Collectors;
 import net.minidev.json.JSONObject;
+import net.minidev.json.JSONArray;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import sd.api.rest.model.BancoDeQuestoes;
 import sd.api.rest.model.ConclusaoQuestao;
 import sd.api.rest.model.Questao;
@@ -86,7 +89,7 @@ public class GerenciadorCenterQuizController {
 
         return usuario.getTipoUsuario();
     }
-    
+
     public Long obterIdUsuarioLogado() {
         Object principal = SecurityContextHolder
                 .getContext()
@@ -600,6 +603,70 @@ public class GerenciadorCenterQuizController {
         }
     }
 
+    /*@PostMapping(
+            value = "/usuario-comum/responder-questionario",
+            produces = "application/json"
+    )
+    public ResponseEntity<JSONObject> responderQuestionario(
+            @RequestBody JSONObject respostaJsonObject
+    ) {
+        Long idQuestao = null;
+        if (respostaJsonObject.has("respostas")) {
+            JSONArray respostas = respostaJsonObject.getJSONArray("respostas");
+            if (respostas.length() > 0) {
+                idQuestao = Long.valueOf(respostas.getJSONObject(0).get("idQuestao").toString());
+            }
+        }
+
+        if (idQuestao == null) {
+            JSONObject retorno = new JSONObject();
+            retorno.put("sucesso", false);
+            retorno.put("feedback", "ID da questão não fornecido");
+            return new ResponseEntity<>(retorno, HttpStatus.BAD_REQUEST);
+        }
+
+        Optional<Questao> questaoOptional = questaoRepository.findById(idQuestao);
+        if (!questaoOptional.isPresent()) {
+            // Questão não encontrada
+            JSONObject retorno = new JSONObject();
+            retorno.put("sucesso", false);
+            retorno.put("feedback", "Questão não encontrada");
+            return new ResponseEntity<>(retorno, HttpStatus.BAD_REQUEST);
+        }
+
+        Questao questao = questaoOptional.get();
+        List<Integer> respostasCorretas = questao.getRespostas();
+
+        JSONArray respostasDoUsuarioJsonArray = respostaJsonObject.getJSONArray("respostas");
+        List<Long> respostasDoUsuario = new ArrayList<>();
+        for (int i = 0; i < respostasDoUsuarioJsonArray.length(); i++) {
+            respostasDoUsuario.add(respostasDoUsuarioJsonArray.getLong(i));
+        }
+
+        if (respostasDoUsuario.size() != respostasCorretas.size()) {
+            JSONObject retorno = new JSONObject();
+            retorno.put("sucesso", false);
+            retorno.put("feedback", "Quantidade de respostas incorreta");
+            return new ResponseEntity<>(retorno, HttpStatus.BAD_REQUEST);
+        }
+
+        boolean respostaCorreta = respostasCorretas.containsAll(respostasDoUsuario);
+
+        JSONObject retorno = new JSONObject();
+        retorno.put("sucesso", respostaCorreta);
+        retorno.put("feedback", respostaCorreta ? "Parabéns, você acertou!" : "Resposta errada! Por favor, tente novamente.");
+
+        if (respostaCorreta) {
+            ConclusaoQuestao conclusaoQuestao = new ConclusaoQuestao();
+            conclusaoQuestao.setIdQuestao(idQuestao);
+            conclusaoQuestao.setIdUsuario(obterIdUsuarioLogado());
+            conclusaoQuestao.setDataConclusao(new Date());
+
+            conclusaoQuestaoRepository.save(conclusaoQuestao);
+        }
+
+        return new ResponseEntity<>(retorno, HttpStatus.OK);
+    }*/
     @PostMapping(
             value = "/usuario-comum/responder-questionario",
             produces = "application/json"
@@ -616,53 +683,75 @@ public class GerenciadorCenterQuizController {
 
         Optional<Questao> questao = questaoRepository.findById(idQuestao);
 
-        boolean respostaCorreta = false;
         if (respostaJsonObject.containsKey("respostas")) {
             List<Long> arrayRespostasVerificar
                     = (ArrayList<Long>) respostaJsonObject.get("respostas");
 
-            for (int i = 0; i < questao.get().getRespostas().size(); i++) {
-                respostaCorreta = false;
-                for (int j = 0; j < arrayRespostasVerificar.size(); j++) {
-                    if (Objects.equals(
-                            questao.get().getRespostas().get(i),
-                            arrayRespostasVerificar.get(j)
-                    )) {
-                        respostaCorreta = true;
-                    }
-                }
-                if (respostaCorreta == false) {
-                    break;
-                }
+//            for (int i = 0; i < questao.get().getRespostas().size(); i++) {
+//                respostaCorreta = false;
+//                for (int j = 0; j < arrayRespostasVerificar.size(); j++) {
+//                    if (Objects.equals(
+//                            questao.get().getRespostas().get(i),
+//                            arrayRespostasVerificar.get(j)
+//                    )) {
+//                        respostaCorreta = true;
+//                    }
+//                }
+//                if (respostaCorreta == false) {
+//                    break;
+//                }
+//            }
+            int nInts = questao.get().getRespostas().size();
+            List<Long> longs = new ArrayList<Long>(nInts);
+            for (int i = 0; i < nInts; ++i) {
+                longs.add(questao.get().getRespostas().get(i).longValue());
             }
-        }
 
-        JSONObject retorno = new JSONObject();
-        retorno.put("sucesso", respostaCorreta);
-        retorno.put("feedback",
-                (respostaCorreta
-                        ? "Parabéns, você acertou!"
-                        : "Resposta errada! Por favor, tente novamente.")
-        );
+            List<Object> auxLong = new ArrayList<>(questao.get().getRespostas());
 
-        if (respostaCorreta) {
+            boolean respostaCorreta = false;
+            if (auxLong.equals(arrayRespostasVerificar)) {
+                respostaCorreta = true;
+            } else {
+                respostaCorreta = false;
+            }
+
+            JSONObject retorno = new JSONObject();
+            retorno.put("sucesso", respostaCorreta);
+            retorno.put("feedback",
+                    (respostaCorreta
+                            ? "Parabéns, você acertou!"
+                            : "Resposta errada! Por favor, tente novamente.")
+            );
+
             ConclusaoQuestao conclusaoQuestao = new ConclusaoQuestao();
             conclusaoQuestao.setIdQuestao(idQuestao);
             conclusaoQuestao.setIdUsuario(obterIdUsuarioLogado()); // IMPUTAR O ID DO USUÁRIO LOGADO
             conclusaoQuestao.setIdQuestao(idQuestao);
+            if (respostaCorreta == true) {
+                conclusaoQuestao.setAcertou("SIM");
+            } else {
+                conclusaoQuestao.setAcertou("NÃO");
+            }
             System.out.println(new Date());
             conclusaoQuestao.setDataConclusao(new Date());
 
             conclusaoQuestaoRepository.save(conclusaoQuestao);
+
+            return new ResponseEntity<JSONObject>(
+                    retorno, HttpStatus.OK
+            );
         }
 
-        return new ResponseEntity<JSONObject>(
-                retorno, HttpStatus.OK
+        return new ResponseEntity(
+                "Erro na verificação da resposta", HttpStatus.OK
         );
+
     }
 
     @GetMapping(value = "/adm/conclusao/todos", produces = "application/json")
-    public ResponseEntity<?> obterConclusoes(Pageable pageable) {
+    public ResponseEntity<?> obterConclusoes(Pageable pageable
+    ) {
         if (obterTipoUsuario() == TipoUsuario.ADM) {
 
             Page<ConclusaoQuestao> paginacaoConclusoes
@@ -723,5 +812,27 @@ public class GerenciadorCenterQuizController {
             );
 
         }
+    }
+
+    /**
+     * Retorna todas as conclusões de uma questão de um deterninado usuário
+     *
+     * @param jsonRequest
+     * @param pageable
+     * @return
+     */
+    @PostMapping(value = "conclusao-questao/obterConclusoesQuestaoUsuario", produces = "application/json")
+    public ResponseEntity<?> obterConclusoesQuestaoUsuario(
+            @RequestBody JSONObject jsonRequest
+    ) {
+        List<ConclusaoQuestao> conclusoes
+                = (List<ConclusaoQuestao>) conclusaoQuestaoRepository.findConclusaoQuestaoByIdQuestaoIdUsuario(Long.parseLong(jsonRequest.getAsString("idQuestao")),
+                        Long.parseLong(jsonRequest.getAsString("idUsuario"))
+                );
+
+        return new ResponseEntity<List<ConclusaoQuestao>>(
+                conclusoes,
+                HttpStatus.OK
+        );
     }
 }

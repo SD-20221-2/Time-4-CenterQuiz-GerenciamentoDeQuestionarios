@@ -1,5 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppConstants } from 'src/app/app-constants';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
 	selector: 'app-questionario',
@@ -9,63 +13,82 @@ import { HttpClient } from '@angular/common/http';
 export class QuestionarioComponent implements OnInit {
 	questionario: any = { questoes: [] };
 	respostas: any = {};
+	enviandoRespostas = false;
 
-	constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient, public dialog: MatDialog) { }
 
 	ngOnInit(): void {
-		this.http.get('http://localhost:8080/centerquiz/api/adm/banco-de-questoes/obter-banco-id-questionario/id/7').subscribe((data) => {
+		let id = localStorage.getItem('idQuestionario');
+
+		this.http.get(
+			AppConstants.baseApi + 'api/adm/banco-de-questoes/obter-banco-id-questionario/id/' + id
+		).subscribe((data: any) => {
 			this.questionario = data;
-			this.questionario.questoes.forEach((questao) => {
-				questao.opcoes = questao.opcoes.map((opcao) => {
+
+			this.questionario.questoes.forEach((questao: any) => {
+				questao.opcoes = questao.opcoes.map((opcao: any, index: any) => {
 					return {
 						valor: opcao,
-						selecionada: false
+						selecionada: false,
+						indiceOpcao: index
 					}
 				});
 			});
 		});
 	}
 
-
-	selecionarOpcao(perguntaId: number, opcao: any) {
-		if (typeof opcao === 'string') {
-			opcao = { valor: opcao, selecionada: false };
-		}
+	selecionarOpcao(idQuestao: number, opcao: any, indiceOpcao: any) {
 		opcao.selecionada = !opcao.selecionada;
-		console.log("Selecionada a opção " + opcao.valor + " da pergunta " + perguntaId);
-	}
-
-
-
-	enviarQuestionario() {
-		const body = {
-			idQuestionario: this.questionario.idQuestionario,
-			respostas: this.respostas
-		};
-
-		this.http.post('url-do-backend/responder-questionario', body).subscribe((data) => {
-			console.log('Questionário enviado com sucesso!', data);
-		});
+		console.log("Selecionada a opção " + opcao.valor + " - da pergunta " + idQuestao);
 	}
 
 	enviarRespostas() {
-		this.questionario.questoes.forEach((questao, index) => {
-			const opcoesSelecionadas = questao.opcoes.filter((opcao) => opcao.selecionada).map((opcao) => opcao.valor);
-			console.log(`Questão ${index + 1}: ${opcoesSelecionadas}`);
-		});
-	}
+		var respostasSelecionadas = this.questionario.questoes.map((questao: any) => {
+			var opcoesSelecionadas = questao.opcoes
+				.filter((opcao: any) => opcao.selecionada)
+				.map((opcao: any) => opcao.valor)
+				.join(', ');
 
+			var indicesOpcoesSelecionadas = questao.opcoes
+				.filter((opcao: any) => opcao.selecionada)
+				.map((opcao: any) => opcao.indiceOpcao);
+
+			return {
+				questao: questao.titulo,
+				resposta: opcoesSelecionadas,
+				idQuestao: questao.id,
+				indicesOpcoesSelecionadas: indicesOpcoesSelecionadas
+			}
+		});
+
+		for (let i = 0; i < respostasSelecionadas.length; i++) {
+			console.log("idQuestao: " + respostasSelecionadas[i].idQuestao + " respostas: " + respostasSelecionadas[i].indicesOpcoesSelecionadas);
+
+			var body = {
+				idQuestao: respostasSelecionadas[i].idQuestao,
+				respostas: respostasSelecionadas[i].indicesOpcoesSelecionadas
+			};
+
+			this.http.post(AppConstants.baseApi + 'api/usuario-comum/responder-questionario', body).subscribe((data) => {
+				console.log('Questionário enviado com sucesso!', data);
+				if (data["sucesso"]) {
+					this.respostas[respostasSelecionadas[i].idQuestao] = { feedback: 'sucesso' };
+					alert(`A resposta da questão ${respostasSelecionadas[i].idQuestao} está correta.`);
+				} else {
+					this.respostas[respostasSelecionadas[i].idQuestao] = { feedback: 'erro' };
+					alert(`A resposta da questão ${respostasSelecionadas[i].idQuestao} está incorreta.`);
+				}
+			});
+		}
+
+		this.enviandoRespostas = true;
+	}
 }
 
-/*import { Component, OnInit } from '@angular/core';
-import { QuestionarioService } from 'src/app/service/questionario.service';
-import { Observable } from 'rxjs';
-import { BancoDeQuestoes } from 'src/app/model/BancoDeQuestoes';
-import { Questionario } from 'src/app/model/Questionario';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Questao } from 'src/app/model/Questao';
-import { Resposta } from 'src/app/model/Resposta';
+/*
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppConstants } from 'src/app/app-constants';
 
 @Component({
 	selector: 'app-questionario',
@@ -73,76 +96,80 @@ import { HttpClient } from '@angular/common/http';
 	styleUrls: ['./questionario.component.css']
 })
 export class QuestionarioComponent implements OnInit {
-	questionario: any = { questoes: [] }; // variável para armazenar o questionário
+	questionario: any = { questoes: [] };
 	respostas: any = {};
+	enviandoRespostas = false; // declaração da variável
 
 	constructor(private http: HttpClient) { }
 
 	ngOnInit(): void {
-		this.http.get('http://localhost:8080/centerquiz/api/adm/banco-de-questoes/obter-banco-id-questionario/id/7').subscribe((data) => {
+		let id = localStorage.getItem('idQuestionario');
+
+		this.http.get(
+			AppConstants.baseApi + 'api/adm/banco-de-questoes/obter-banco-id-questionario/id/' + id
+		).subscribe((data: any) => {
 			this.questionario = data;
+
+			this.questionario.questoes.forEach((questao: any) => {
+				questao.opcoes = questao.opcoes.map((opcao: any, index: any) => {
+					return {
+						valor: opcao,
+						selecionada: false,
+						indiceOpcao: index
+					}
+				});
+			});
 		});
 	}
 
-	selecionarOpcao(perguntaId: number, opcao: string) {
-		this.respostas[perguntaId] = opcao;
-		console.log("Selecionada a opção " + opcao); //+ "da pergunta " + JSON.stringify(perguntaId));
-	}
-
-
-	enviarQuestionario() {
-		const respostas = {};
-		this.questionario.questoes.forEach((questao) => {
-			respostas[questao.id] = questao.opcoes.filter((opcao) => opcao.selecionada).map((opcao) => opcao.valor);
-		});
-		const body = {
-			idQuestionario: this.questionario.idQuestionario,
-			respostas: respostas
-		};
-
-		//console.log("Respostas: " + JSON.stringify(this.respostas));
-		/*
-		this.http.post('url-do-backend/responder-questionario', body).subscribe((data) => {
-			console.log('Questionário enviado com sucesso!', data);
-		});
-		
+	selecionarOpcao(idQuestao: number, opcao: any, indiceOpcao: any) {
+		opcao.selecionada = !opcao.selecionada;
+		console.log("Selecionada a opção " + opcao.valor + " - da pergunta " + idQuestao);
 	}
 
 	enviarRespostas() {
-		console.log("Respostas: " + JSON.stringify(this.respostas)); // faça o que precisar com as respostas do usuário
+		var respostasSelecionadas = this.questionario.questoes.map((questao: any) => {
+			var opcoesSelecionadas = questao.opcoes
+				.filter((opcao: any) => opcao.selecionada)
+				.map((opcao: any) => opcao.valor)
+				.join(', ');
+
+			var indicesOpcoesSelecionadas = questao.opcoes
+				.filter((opcao: any) => opcao.selecionada)
+				.map((opcao: any) => opcao.indiceOpcao);
+
+			return {
+				questao: questao.titulo,
+				resposta: opcoesSelecionadas,
+				idQuestao: questao.id,
+				indicesOpcoesSelecionadas: indicesOpcoesSelecionadas
+			}
+		});
+
+		for (let i = 0; i < respostasSelecionadas.length; i++) {
+			console.log("idQuestao: " + respostasSelecionadas[i].idQuestao + " respostas: " + respostasSelecionadas[i].indicesOpcoesSelecionadas);
+
+			var body = {
+				idQuestao: respostasSelecionadas[i].idQuestao,
+				respostas: respostasSelecionadas[i].indicesOpcoesSelecionadas
+			};
+
+			this.http.post(AppConstants.baseApi + 'api/usuario-comum/responder-questionario', body).subscribe((data) => {
+				console.log('Questionário enviado com sucesso!', data);
+				if (data["sucesso"]) {
+					this.respostas[respostasSelecionadas[i].idQuestao] = { feedback: 'sucesso' };
+					alert(`A resposta da questão ${respostasSelecionadas[i].idQuestao} está correta.`);
+				} else {
+					this.respostas[respostasSelecionadas[i].idQuestao] = { feedback: 'erro' };
+					alert(`A resposta da questão ${respostasSelecionadas[i].idQuestao} está incorreta.`);
+				}
+			}, (error) => {
+				console.error('Erro ao enviar questionário:', error);
+				this.respostas[respostasSelecionadas[i].idQuestao] = { feedback: 'erro' };
+				alert(`Ocorreu um erro ao enviar a resposta da questão ${respostasSelecionadas[i].idQuestao}. Por favor, tente novamente mais tarde.`);
+			});
+		}
 	}
 
-
-
-	/*	bancoDeQuestoes: BancoDeQuestoes;
-		nomeQuestionario: String;
-		qtdOpcoes: Number;
-		listaNameOpcaoCheckbox: String[];
-	
-	
-		constructor(private questionarioService: QuestionarioService) {
-		}
-	
-		ngOnInit(): void {
-			var idQuestionario = localStorage.getItem("idQuestionario");
-	
-			this.questionarioService.getBancoDeQuestoesQuestionarioIdQuestionario(Number(idQuestionario)).subscribe(
-				data => {
-					this.bancoDeQuestoes = data;
-					console.log("BancoDeQuestoes: " + JSON.stringify(data))
-					console.log("tamanho: " + Number(JSON.parse(JSON.stringify(this.bancoDeQuestoes)).questoes.length))
-					var qtdQuestoes = Number(JSON.parse(JSON.stringify(this.bancoDeQuestoes)).questoes.length);
-				}
-			);
-	
-			this.questionarioService.getQuestionarioId(Number(idQuestionario)).subscribe(
-				data => {
-					this.nomeQuestionario = JSON.parse(JSON.stringify(data)).nome;
-				}
-			);
-		}
-		
 }
 */
-
-

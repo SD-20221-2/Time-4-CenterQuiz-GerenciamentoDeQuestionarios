@@ -1,152 +1,104 @@
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<div style=" position: absolute;
-    top:20%;
-    left: 10%;">
-
+<div style="position: absolute; top: 20%; left: 10%;">
 	<div class="container-fluid">
-
 		<form>
-
-			<div class="card border-info mb-4" *ngFor="let questao of questionario.questoes">
-				<div class="d-flex justify-content-between align-items-center card-header bg-info text-white" id="h1">
+			<div class="card border-info mb-4" *ngFor="let questao of questionario.questoes; let i = index;">
+				<div class="d-flex justify-content-between align-items-center card-header bg-info text-white"
+					id="h{{i}}">
 					<span>{{questao.titulo}}</span>
-					<button type="button" data-toggle="collapse" data-target="#q1" aria-expanded="false"
-						aria-controls="q1" class="btn btn-outline-light"><svg width="1em" height="1em"
-							viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd"
-								d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-						</svg>
-					</button>
+					<ng-container *ngIf="respostas[questao.id] !== undefined">
+						<ng-container *ngIf="respostas[questao.id].feedback === 'sucesso'">
+							<i style="width: 20px;" class="fas fa-check-circle text-success ml-2"></i>
+						</ng-container>
+						<ng-container *ngIf="respostas[questao.id].feedback === 'erro'">
+							<i class="fas fa-times-circle text-danger ml-2"></i>
+						</ng-container>
+					</ng-container>
 				</div>
-				<div class="form-check" *ngFor="let opcao of questao.opcoes">
-					<input class="form-check-input" type="checkbox" [name]="questao.id" [value]="opcao.valor"
-						(change)="selecionarOpcao(questao.id, opcao)" [checked]="opcao.selecionada" />
-					<label class="form-check-label">{{ opcao.valor }}</label>
-				</div>
-			</div>
-			<button type="button" (click)="enviarRespostas()">Enviar respostas</button>
-		</form>
-
-
-
-
-
-		<!--
-		<form>
-			<!--
-			<div class="card border-info mb-4 "
-				*ngFor="let questao of bancoDeQuestoes.questoes; let iterQuestoes = index;">
-
-				<div class="d-flex justify-content-between align-items-center card-header bg-info text-white" id="h1">
-					<span>{{questao.titulo}}</span>
-					<button type="button" data-toggle="collapse" data-target="#q1" aria-expanded="false"
-						aria-controls="q1" class="btn btn-outline-light"><svg width="1em" height="1em"
-							viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd"
-								d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-						</svg>
-					</button>
-				</div>
-
-				<div id="q1" class="collapse show" aria-labelledby="h1">
+				<div id="q{{i}}" class="collapse show" aria-labelledby="h{{i}}">
 					<div class="card-body">
-						<p>{{questao.texto}}</p>
-
-						<div class="form-check" *ngFor="let opcao of questao.opcoes; let iterOpcoes = index">
-							<input [(ngModel)]="respostasQuestoes" class="form-check-input" type="checkbox"
-								name="questao_{{iterQuestoes}}_opcao_{{iterOpcoes}}"
-								id="questao_{{iterQuestoes}}_id_{{iterOpcoes}}"
-								value="questao_{{iterQuestoes}}_valor_{{iterOpcoes}}">
-							<label class="form-check-label" for="questao_{{iterQuestoes}}_id_{{iterOpcoes}}">
-								{{opcao}}
-							</label>
+						<b>{{questao.texto}}</b><br>
+						<div class="form-check" *ngFor="let opcao of questao.opcoes; let j = index;">
+							<input class="form-check-input" type="checkbox" [id]="'questao'+i+'opcao'+j"
+								[name]="'questao'+i" [value]="opcao.valor"
+								(click)="selecionarOpcao(questao.id, opcao, j)">
+							<label class="form-check-label" [for]="'questao'+i+'opcao'+j">{{opcao.valor}}</label>
 						</div>
-
-
-
-					</div>
-
-				</div>
-			</div>
-			
-
-
-			<button type="button" class="btn btn-success">Enviar</button>
-			<br /><br /><br />-->
-
-		<!--<div *ngFor="let questao of questoes; let iterQuestoes = index">
-				<p>{{ questao.titulo }}</p>
-				<p>{{ questao.texto }}</p>
-				<div *ngFor="let opcao of questao.opcoes; let iterOpcoes = index">
-					<input type="checkbox" name="{{ iterQuestoes }}" [value]="iterOpcoes"
-						(change)="respostas[iterQuestoes] = $event.target.checked">{{ opcao }}
-				</div>
-			</div>
-			<button (click)="enviarRespostas()">Enviar</button>
-			
-			<form>
-				<!--<div *ngIf="questionario">
-					<h2>{{ questionario.titulo }}</h2>
-					<p>{{ questionario.descricao }}</p>
-					<form (ngSubmit)="enviarQuestionario()">
-						<div *ngFor="let questao of questionario.questoes">
-							<h3>{{ questao.titulo }}</h3>
-							<p>{{ questao.texto }}</p>
-							<div *ngFor="let opcao of questao.opcoes">
-								<input type="checkbox" name="opcao" [(ngModel)]="opcao.selecionada" [value]="opcao" />
-								{{ opcao }}
-							</div>
-						</div>
-						<button type="submit">Enviar</button>
-					</form>
-				</div>
-				-->
-
-		<!--<div *ngFor="let questao of questionario.questoes">
-					<h4>{{ questao.titulo }}</h4>
-					<p>{{ questao.texto }}</p>
-					<div *ngFor="let opcao of questao.opcoes; let i = index">
-						<label>
-							<input type="checkbox" name="opcao{{ questao.id }}"
-								[checked]="respostas[questao.id]?.includes(i)"
-								(change)="selecionarOpcao(questao.id, i)">
-							{{ opcao }}
-						</label>
 					</div>
 				</div>
-				
-			
-				<div *ngFor="let questao of questionario.questoes">
-					<h3>{{ questao.titulo }}</h3>
-					<p>{{ questao.texto }}</p>
-					<ul>
-						<li *ngFor="let opcao of questao.opcoes">
-							<label>
-								<!--<input type="checkbox" [(ngModel)]="questao.selecionada"
-									(change)="selecionarOpcao(questao, opcao)">-->
-		<!--<input type="checkbox" [checked]="opcao === questao.selecionada"
-									(change)="selecionarOpcao(opcao)" [name]="opcao">
-
-								<input type="checkbox" [checked]="opcao === questao.selecionada"
-									(change)="selecionarOpcao(questao, opcao)">
-
-								{{ opcao }}
-							</label>
-						</li>
-					</ul>
-				</div>
-				<button (click)="enviarRespostas()">Enviar respostas</button>
-
-
-
-			</form>
+			</div>
+			<div class="form-group mt-4">
+				<button type="button" class="btn btn-primary" [disabled]="enviandoRespostas"
+					(click)="enviarRespostas()">Enviar
+					respostas</button>
+			</div>
 		</form>
-		-->
-
-
-
 	</div>
 </div>
+
+
+<div *ngIf="enviandoRespostas" class="modal-backdrop fade show"></div>
+<div *ngIf="enviandoRespostas" class="modal fade show d-block" id="enviandoRespostasModal" tabindex="-1" role="dialog"
+	aria-labelledby="enviandoRespostasModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Enviando respostas...</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+					(click)="enviandoRespostas = false">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>Aguarde enquanto as suas respostas estão sendo enviadas...</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div style="position: absolute; top: 20%; left: 10%;">
+	<div class="container-fluid">
+		<form>
+			<div class="card border-info mb-4" *ngFor="let questao of questionario.questoes; let i = index;">
+				<div class="d-flex justify-content-between align-items-center card-header bg-info text-white"
+					id="h{{i}}">
+					<span>{{questao.titulo}}</span>
+					<ng-container *ngIf="respostas[questao.id] !== undefined">
+						<ng-container *ngIf="respostas[questao.id].feedback === 'sucesso'">
+							<i style="width: 20px;" class="fas fa-check-circle text-success ml-2"></i>
+						</ng-container>
+						<ng-container *ngIf="respostas[questao.id].feedback === 'erro'">
+							<i class="fas fa-times-circle text-danger ml-2"></i>
+						</ng-container>
+					</ng-container>
+				</div>
+				<div id="q{{i}}" class="collapse show" aria-labelledby="h{{i}}">
+					<div class="card-body">
+						<b>{{questao.texto}}</b><br>
+						<div class="form-check" *ngFor="let opcao of questao.opcoes; let j = index;">
+							<input class="form-check-input" type="checkbox" [id]="'questao'+i+'opcao'+j"
+								[name]="questao.id" [value]="opcao.indiceOpcao" [checked]="opcao.selecionada"
+								[disabled]="respostas[questao.id] !== undefined"
+								(change)="selecionarOpcao(questao.id, opcao, j)">
+							<label class="form-check-label" [for]="'questao'+i+'opcao'+j">{{opcao.valor}}</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-success" type="button" (click)="enviarRespostas()"
+				[disabled]="enviandoRespostas">Enviar
+				respostas</button>
+			<ng-container *ngIf="enviandoRespostas">
+				<i class="fas fa-spinner fa-spin ml-2"></i>
+			</ng-container>
+		</form>
+	</div>
+</div>
+
+-->

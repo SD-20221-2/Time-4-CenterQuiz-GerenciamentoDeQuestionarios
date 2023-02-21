@@ -26,8 +26,20 @@ public class ConclusaoQuestao {
     public Long idUsuario;
     public Long idQuestao;
     
+    public String acertou;
+    
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     public Date dataConclusao;
+
+    public String getAcertou() {
+        return acertou;
+    }
+
+    public void setAcertou(String acertou) {
+        this.acertou = acertou;
+    }
+    
+    
 
     public Long getIdConclusaoQuestao() {
         return idConclusaoQuestao;
