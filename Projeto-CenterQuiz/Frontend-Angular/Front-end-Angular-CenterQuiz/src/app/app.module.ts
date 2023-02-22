@@ -17,6 +17,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ConclusoesComponent } from './component/conclusoes/conclusoes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
+import { CadastrarQuestaoComponent } from './component/cadastrar-questao/cadastrar-questao.component';
+import { CadastrarUsuarioComponent } from './component/cadastrar-usuario/cadastrar-usuario.component';
+import { AnaliseDadosComponent } from './component/analise-dados/analise-dados.component';
 
 
 export const appRouters: Routes = [
@@ -43,6 +46,14 @@ export const appRouters: Routes = [
 	{
 		path: 'questionario',
 		component: QuestionarioComponent
+	},
+	{
+		path: 'cadastrar-questao',
+		component: CadastrarQuestaoComponent
+	},
+	{
+		path: 'cadastrar-usuario',
+		component: CadastrarUsuarioComponent
 	}
 ];
 
@@ -56,7 +67,10 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters)
 		UsuarioComponent,
 		CadastrarQuestionarioComponent,
 		QuestionarioComponent,
-  ConclusoesComponent
+		ConclusoesComponent,
+		CadastrarQuestaoComponent,
+		CadastrarUsuarioComponent,
+  AnaliseDadosComponent
 	],
 	imports: [
 		BrowserModule,

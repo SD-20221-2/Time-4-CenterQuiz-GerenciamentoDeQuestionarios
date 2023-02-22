@@ -20,7 +20,6 @@ import sd.api.rest.model.BancoDeQuestoes;
 import sd.api.rest.model.Usuario;
 import sd.api.rest.model.enums.TipoUsuario;
 import sd.api.rest.repository.BancoDeQuestoesRepository;
-import sd.api.rest.repository.QuestionarioRepository;
 import sd.api.rest.repository.UsuarioRepository;
 
 @CrossOrigin(origins = "*")
@@ -30,9 +29,6 @@ public class BancoDeQuestoesController {
 
     @Autowired // se fosse CDI seria @Inject
     private BancoDeQuestoesRepository bancoDeQuestoesRepository;
-
-    @Autowired
-    private QuestionarioRepository questionarioRepository;
 
     @Autowired
     private UsuarioRepository usuarioRepository;

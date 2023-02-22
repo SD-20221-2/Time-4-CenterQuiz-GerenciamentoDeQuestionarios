@@ -38,8 +38,6 @@ public class ConclusaoQuestao {
     public void setAcertou(String acertou) {
         this.acertou = acertou;
     }
-    
-    
 
     public Long getIdConclusaoQuestao() {
         return idConclusaoQuestao;

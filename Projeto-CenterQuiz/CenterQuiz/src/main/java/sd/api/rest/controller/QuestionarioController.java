@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import sd.api.rest.model.Questionario;
+import sd.api.rest.model.QuestionarioDTO;
+import sd.api.rest.repository.BancoDeQuestoesRepository;
 import sd.api.rest.repository.QuestionarioRepository;
 
 @CrossOrigin(origins = "*")
@@ -29,11 +31,11 @@ public class QuestionarioController {
     private QuestionarioRepository questionarioRepository;
 
     @GetMapping(value = "/todos", produces = "application/json")
-    public ResponseEntity<List<Questionario>> obterQuestionarios() {
-        List<Questionario> questionarios
-                = (List<Questionario>) questionarioRepository.findAll();
-
-        return new ResponseEntity<List<Questionario>>(
+    public ResponseEntity<?> obterQuestionarios() {
+        List<QuestionarioDTO> questionarios
+                = questionarioRepository.findQuestionariosComBancoDeQuestoes();
+        
+        return new ResponseEntity<>(
                 questionarios,
                 HttpStatus.OK
         );

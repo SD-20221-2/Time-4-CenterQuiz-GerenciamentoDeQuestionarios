@@ -835,4 +835,25 @@ public class GerenciadorCenterQuizController {
                 HttpStatus.OK
         );
     }
+    
+    /**
+     * Retorna todas as conclusões de todas as questões de um deterninado usuário
+     *
+     * @param jsonRequest
+     * @return
+     */
+    @PostMapping(value = "obter-todas-conclusoes-usuario", produces = "application/json")
+    public ResponseEntity<?> obterTodasConclusoesUsuario(
+            @RequestBody JSONObject jsonRequest
+    ) {
+        List<ConclusaoQuestao> conclusoes
+                = (List<ConclusaoQuestao>) conclusaoQuestaoRepository.findConclusoesQuestoesUsuario(
+                        Long.parseLong(jsonRequest.getAsString("idUsuario"))
+                );
+
+        return new ResponseEntity<>(
+                conclusoes,
+                HttpStatus.OK
+        );
+    }
 }

@@ -18,15 +18,15 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.questionarioService.getListQuestionarios().subscribe(
-			data => {
 
+			data => {
 				this.questionarios = data;
 			}
 		);
 	}
 
 	public acessarQuestionario(idQuestionario: Number) {
-		
+
 		localStorage.setItem("idQuestionario", String(idQuestionario));
 
 		this.router.navigate(['questionario'])

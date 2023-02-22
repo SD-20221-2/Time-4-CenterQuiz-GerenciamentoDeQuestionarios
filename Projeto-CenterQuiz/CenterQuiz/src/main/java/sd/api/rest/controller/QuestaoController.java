@@ -2,6 +2,7 @@ package sd.api.rest.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,8 +22,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import sd.api.rest.model.BancoDeQuestoes;
 import sd.api.rest.model.Usuario;
 import sd.api.rest.model.enums.TipoUsuario;
+import sd.api.rest.repository.BancoDeQuestoesRepository;
 import sd.api.rest.repository.UsuarioRepository;
 
 @CrossOrigin(origins = "*")
@@ -35,6 +38,9 @@ public class QuestaoController {
 
     @Autowired // se fosse CDI seria @Inject
     private UsuarioRepository usuarioRepository;
+    
+    @Autowired // se fosse CDI seria @Inject
+    private BancoDeQuestoesRepository bancoDeQuestoesRepository;
 
     public TipoUsuario obterTipoUsuario() {
         Object principal = SecurityContextHolder
@@ -94,9 +100,9 @@ public class QuestaoController {
     ) {
 
         JSONObject questaoSemRespostas = new JSONObject();
-        
+
         Optional<Questao> questao = questaoRepository.findById(id);
-        
+
         questaoSemRespostas.put("id", questao.get().getId());
         questaoSemRespostas.put("titulo", questao.get().getTitulo());
         questaoSemRespostas.put("texto", questao.get().getTexto());
@@ -118,6 +124,20 @@ public class QuestaoController {
         if (obterTipoUsuario() == TipoUsuario.ADM) {
 
             Questao questaoSalva = questaoRepository.save(questao);
+
+            /**
+             * Atualizar o BancoDeQuestoes correspondente, com a nova questão
+             */
+            // Busca o BancoDeQuestoes correspondente ao idBancoDeQuestoes da questão salva
+            BancoDeQuestoes bancoDeQuestoes = bancoDeQuestoesRepository.findById(questao.getIdBancoDeQuestoes())
+        .orElseThrow(() -> new NoSuchElementException("Banco de Questões não encontrado"));
+
+
+            // Adiciona a nova questão à lista de questoes do BancoDeQuestoes
+            bancoDeQuestoes.getQuestoes().add(questao);
+
+            // Salva o BancoDeQuestoes atualizado no banco
+            bancoDeQuestoesRepository.save(bancoDeQuestoes);
 
             return new ResponseEntity<Questao>(
                     questaoSalva,

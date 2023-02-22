@@ -24,4 +24,13 @@ public interface ConclusaoQuestaoRepository
     List<ConclusaoQuestao> findConclusaoQuestaoByIdQuestaoIdUsuario(
             long idQuestao, long idUsuario
     );
+    
+    /**
+     * Retorna todas as conclusões de um deterninado usuário
+     * @return 
+     */
+    @Query("select u from ConclusaoQuestao u where u.idUsuario = ?1")
+    List<ConclusaoQuestao> findConclusoesQuestoesUsuario(
+            long idUsuario
+    );
 }

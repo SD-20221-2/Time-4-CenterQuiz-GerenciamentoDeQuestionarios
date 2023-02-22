@@ -1,11 +1,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<div style="position: absolute; top: 20%; left: 10%;">
-	<div class="container-fluid">
-		<div class="row justify-content-center">
-			<div class="col-md-50">
-				<h2 class="text-center mb-5">Cadastro de Questionário</h2>
 
+<div class="container-fluid" style="position: absolute; top: 100px; left: auto;">
+	<div class="row justify-content-center">
+		<div class="col-md-6">
+			<h2 class="text-center mb-5">Cadastro de Questionário</h2>
+			<div class="card">
+
+				<div class="card-body">
 				<form [formGroup]="questionarioForm" (ngSubmit)="submitQuestionario()">
 					<div class="form-group">
 						<label for="nome">Nome do questionário</label>
@@ -76,12 +78,11 @@
 					</div>
 
 
-					<br/>
+					<br />
 					<button type="submit" class="btn btn-success">Salvar questionário</button>
 				</form>
+				</div>
 			</div>
 		</div>
 	</div>
-
-
 </div>

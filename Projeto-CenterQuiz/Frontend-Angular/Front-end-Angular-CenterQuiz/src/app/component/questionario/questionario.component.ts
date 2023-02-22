@@ -75,10 +75,8 @@ export class QuestionarioComponent implements OnInit {
 				console.log('Questionário enviado com sucesso!', data);
 				if (data["sucesso"]) {
 					this.respostas[respostasSelecionadas[i].idQuestao] = { feedback: 'sucesso' };
-					alert(`A resposta da questão ${respostasSelecionadas[i].idQuestao} está correta.`);
 				} else {
 					this.respostas[respostasSelecionadas[i].idQuestao] = { feedback: 'erro' };
-					alert(`A resposta da questão ${respostasSelecionadas[i].idQuestao} está incorreta.`);
 				}
 			}, error => {
 				console.log('Erro ao enviar questionário', error);
