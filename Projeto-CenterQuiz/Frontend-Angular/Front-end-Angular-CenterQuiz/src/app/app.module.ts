@@ -20,6 +20,7 @@ import { DatePipe } from '@angular/common';
 import { CadastrarQuestaoComponent } from './component/cadastrar-questao/cadastrar-questao.component';
 import { CadastrarUsuarioComponent } from './component/cadastrar-usuario/cadastrar-usuario.component';
 import { AnaliseDadosComponent } from './component/analise-dados/analise-dados.component';
+import Chart from 'chart.js/auto';
 
 
 export const appRouters: Routes = [
@@ -54,6 +55,10 @@ export const appRouters: Routes = [
 	{
 		path: 'cadastrar-usuario',
 		component: CadastrarUsuarioComponent
+	},
+	{
+		path: 'analise-dados',
+		component: AnaliseDadosComponent
 	}
 ];
 
