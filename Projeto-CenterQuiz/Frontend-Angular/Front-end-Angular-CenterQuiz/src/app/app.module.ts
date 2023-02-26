@@ -21,6 +21,7 @@ import { CadastrarQuestaoComponent } from './component/cadastrar-questao/cadastr
 import { CadastrarUsuarioComponent } from './component/cadastrar-usuario/cadastrar-usuario.component';
 import { AnaliseDadosComponent } from './component/analise-dados/analise-dados.component';
 import Chart from 'chart.js/auto';
+import { CommonModule} from '@angular/common';
 
 
 export const appRouters: Routes = [
@@ -85,7 +86,8 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters)
 		FormsModule,
 		ReactiveFormsModule,
 		MatDialogModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+		CommonModule
 	],
 	providers: [DatePipe],
 	bootstrap: [AppComponent]

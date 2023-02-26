@@ -4,12 +4,14 @@ import { Observable } from 'rxjs';
 import { BancoDeQuestoes } from 'src/app/model/BancoDeQuestoes';
 import { Questionario } from 'src/app/model/Questionario';
 import { QuestionarioService } from 'src/app/service/questionario.service';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
-	styleUrls: ['./home.component.css']
-
+	styleUrls: ['./home.component.css'],
+	providers: [DatePipe]
 })
 export class HomeComponent implements OnInit {
 	questionarios: Observable<Questionario[]>;
@@ -25,9 +27,10 @@ export class HomeComponent implements OnInit {
 		);
 	}
 
-	public acessarQuestionario(idQuestionario: Number) {
+	public acessarQuestionario(idQuestionario: Number, nome: String) {
 
 		localStorage.setItem("idQuestionario", String(idQuestionario));
+		localStorage.setItem("nomeQuestionario", String(nome));
 
 		this.router.navigate(['questionario'])
 	}

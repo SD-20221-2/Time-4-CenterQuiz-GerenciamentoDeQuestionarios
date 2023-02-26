@@ -75,7 +75,6 @@ export class CadastrarQuestionarioComponent implements OnInit {
 	}
 
 	submitQuestionario() {
-		console.log(JSON.stringify(this.questionarioForm.value));
 
 		//Salvar questionário:
 
@@ -103,7 +102,6 @@ export class CadastrarQuestionarioComponent implements OnInit {
 			}
 		};
 
-		console.log(JSON.stringify(jsonNovo));
 
 
 		var body = jsonNovo;

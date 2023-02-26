@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import Chart, { ChartType, ChartOptions } from 'chart.js/auto';
 import { HttpClient } from '@angular/common/http';
+import { AppConstants } from 'src/app/app-constants';
 
 @Component({
 	selector: 'app-analise-dados',
@@ -11,7 +12,7 @@ export class AnaliseDadosComponent implements OnInit {
 	dados: any[];
 	acertos: number[];
 	erros: number[];
-	private endpoint = 'http://localhost:8080/centerquiz/api/obter-todas-conclusoes-usuario';
+	private endpoint = AppConstants.baseApi + 'api/obter-todas-conclusoes-usuario';
 	@ViewChild('grafico', { static: true }) grafico: ElementRef<HTMLCanvasElement>;
 
 	constructor(private http: HttpClient, private elRef: ElementRef) { }
@@ -22,7 +23,6 @@ export class AnaliseDadosComponent implements OnInit {
 			(dados: any[]) => {
 				this.dados = dados;
 
-				console.log("Dados: " + JSON.stringify(dados))
 				this.processarDados();
 				this.criarGrafico();
 			},

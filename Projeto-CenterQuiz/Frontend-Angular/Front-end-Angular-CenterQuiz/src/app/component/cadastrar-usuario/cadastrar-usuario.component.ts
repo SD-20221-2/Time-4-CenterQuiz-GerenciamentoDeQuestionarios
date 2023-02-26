@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { AppConstants } from 'src/app/app-constants';
 
 @Component({
 	selector: 'app-cadastrar-usuario',
@@ -40,10 +41,9 @@ export class CadastrarUsuarioComponent {
 			return;
 		}
 		
-		console.log("Usuário: " + JSON.stringify(this.usuario));
 
 		
-		this.http.post('http://localhost:8080/centerquiz/api/adm/cadastrar-usuario', this.usuario)
+		this.http.post(AppConstants.baseApi + 'api/adm/cadastrar-usuario', this.usuario)
 			.subscribe(() => {
 				alert("Usuário cadastrado com sucesso!")
 				this.router.navigate(['/usuarios']);

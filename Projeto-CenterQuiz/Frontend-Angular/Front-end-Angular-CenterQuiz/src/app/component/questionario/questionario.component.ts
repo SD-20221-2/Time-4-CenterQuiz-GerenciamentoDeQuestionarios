@@ -16,6 +16,7 @@ export class QuestionarioComponent implements OnInit {
 	questionario: any = { questoes: [] };
 	respostas: any = {};
 	enviandoRespostas = false;
+	nomeQuestionario = localStorage.getItem("nomeQuestionario");
 
 	constructor(private http: HttpClient, public dialog: MatDialog) { }
 
@@ -41,7 +42,6 @@ export class QuestionarioComponent implements OnInit {
 
 	selecionarOpcao(idQuestao: number, opcao: any, indiceOpcao: any) {
 		opcao.selecionada = !opcao.selecionada;
-		console.log("Selecionada a opção " + opcao.valor + " - da pergunta " + idQuestao);
 	}
 
 	enviarRespostas() {
@@ -64,7 +64,6 @@ export class QuestionarioComponent implements OnInit {
 		});
 
 		for (let i = 0; i < respostasSelecionadas.length; i++) {
-			console.log("idQuestao: " + respostasSelecionadas[i].idQuestao + " respostas: " + respostasSelecionadas[i].indicesOpcoesSelecionadas);
 
 			var body = {
 				idQuestao: respostasSelecionadas[i].idQuestao,
@@ -100,7 +99,6 @@ export class QuestionarioComponent implements OnInit {
 
 		dialogRef.afterClosed().subscribe(result => {
 			if (result !== undefined) {
-				console.log(result);
 				this.respostas[idQuestao] = result;
 				this.questionario.questoes[indiceQuestao].respondida = true;
 			}

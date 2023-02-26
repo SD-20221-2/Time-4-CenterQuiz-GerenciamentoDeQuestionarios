@@ -11,7 +11,7 @@ import { LoginServiceService } from './service/LoginService.service';
 })
 
 export class AppComponent implements OnInit {
-	title = 'Front-end-Angular-CenterQuiz';
+	title = 'CenterQuiz';
 	constructor(private router: Router, private appService: AppService) {
 
 	}
@@ -48,6 +48,10 @@ export class AppComponent implements OnInit {
 	
 	public getNomeUsuario() {
 		return localStorage.getItem("nomeUsuario");
+	}
+	
+	public getTipoUsuario() {
+		return localStorage.getItem("tipoUsuario");
 	}
 
 }
