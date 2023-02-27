@@ -1,6 +1,6 @@
 export class AppConstants {
 	public static get baseServidor():string {
-		return "http://localhost:8080/"
+		return "https://centerquiz-production.up.railway.app/"
 	}
 	
 	public static get baseLogin(): string {

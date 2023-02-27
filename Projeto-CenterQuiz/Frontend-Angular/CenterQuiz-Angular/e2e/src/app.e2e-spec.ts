@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', async () => {
     await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('Front-end-Angular-CenterQuiz app is running!');
+    expect(await page.getTitleText()).toEqual('CenterQuiz-Angular app is running!');
   });
 
   afterEach(async () => {

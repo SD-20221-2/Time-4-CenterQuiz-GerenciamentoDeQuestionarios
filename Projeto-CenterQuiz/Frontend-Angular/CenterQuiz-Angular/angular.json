@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "19c5bab7-82ef-4784-a728-a115e4815c5a"
+    "analytics": "06522fce-356b-40a1-9625-acd21c2a6a66"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Front-end-Angular-CenterQuiz": {
+    "CenterQuiz-Angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Front-end-Angular-CenterQuiz",
+            "outputPath": "dist/CenterQuiz-Angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Front-end-Angular-CenterQuiz:build"
+            "browserTarget": "CenterQuiz-Angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Front-end-Angular-CenterQuiz:build:production"
+              "browserTarget": "CenterQuiz-Angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Front-end-Angular-CenterQuiz:build"
+            "browserTarget": "CenterQuiz-Angular:build"
           }
         },
         "test": {
@@ -90,15 +90,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/styles.css",
-              "node_modules/bootstrap/scss/bootstrap.scss"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-			  "node_modules/popper.js/dist/umd/popper.js",
-			  "node_modules/bootstrap/dist/js/bootstrap.js"
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -118,16 +112,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Front-end-Angular-CenterQuiz:serve"
+            "devServerTarget": "CenterQuiz-Angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Front-end-Angular-CenterQuiz:serve:production"
+              "devServerTarget": "CenterQuiz-Angular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Front-end-Angular-CenterQuiz"
+  "defaultProject": "CenterQuiz-Angular"
 }

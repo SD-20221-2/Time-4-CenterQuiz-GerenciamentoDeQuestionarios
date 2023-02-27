@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/Front-end-Angular-CenterQuiz'),
+      dir: require('path').join(__dirname, './coverage/CenterQuiz-Angular'),
       subdir: '.',
       reporters: [
         { type: 'html' },
